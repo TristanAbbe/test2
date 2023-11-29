@@ -27,26 +27,17 @@ public class Event
         } else if (currentRoom.getName().equals("Caterpillar cadle")) {
             // Echanger Doubiprane contre Soie
         } else if (currentRoom.getName().equals("Hatmaker's bunker")) {
-            // Réaliser d'autres actions pour une autre salle
-            System.out.println("...");
+            // Echanger Soie contre casque
         } else if (currentRoom.getName().equals("Body-card garden")) {
-            // Réaliser d'autres actions pour une autre salle
-            System.out.println("...");
-        } else if (currentRoom.getName().equals("Body-card garden")) {
-            // Réaliser d'autres actions pour une autre salle
-            System.out.println("...");
+            // Si casque elle peut passer sinon elle meurt
         } else if (currentRoom.getName().equals("Glorious rabbit hole")) {
-            // Réaliser d'autres actions pour une autre salle
-            System.out.println("...");
+            // Lapin fait la devinette
         } else if (currentRoom.getName().equals("Beaver River")) {
-            // Réaliser d'autres actions pour une autre salle
-            System.out.println("...");
+            // Si Alice a pris la potion sans manger le Grasnolax -> Mort
         } else if (currentRoom.getName().equals("Joyless toilets")) {
-            // Réaliser d'autres actions pour une autre salle
-            System.out.println("...");
+            // Si chasse d'eau tirée 3 fois --> FIN DU JEU
         } else {
-            // Si la pièce actuelle n'est associée à aucune action spécifique
-            System.out.println("Vous êtes dans une pièce non spécifiée.");
+            // Piece random... rien a faire 
         }
     }
 
