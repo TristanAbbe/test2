@@ -8,7 +8,6 @@
 public class Event
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
 
     /**
      * Constructeur d'objets de classe Event
@@ -17,7 +16,7 @@ public class Event
     {
     }
 
-    public void handleRoomEvent(Alice alice, Room currentRoom) {
+    public void handleRoomEvent (Room currentRoom) {
         if (currentRoom.getName().equals("Catwalk")) {
             // Lapin parler en fonction de l'avancement du jeu
         } else if (currentRoom.getName().equals("Thumbs war room")) {
@@ -37,7 +36,7 @@ public class Event
         } else if (currentRoom.getName().equals("Joyless toilets")) {
             // Si chasse d'eau tirée 3 fois --> FIN DU JEU
         } else {
-            // Piece random... rien a faire 
+            // Alice est dans une autre piece...
         }
     }
 
