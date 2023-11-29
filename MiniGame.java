@@ -33,25 +33,20 @@ public class MiniGame
      *values of dice are random - Alice chooses the rules, she needs to lose to win the game
      *
      */
-    public void DiceGame ()
+    public void diceGame ()
     {
-        // Insérez votre code ici
         JOptionPane.showMessageDialog(null,"Bienvenue dans le jeu de dés !");
-        //Joueur joueur1 = new Joueur("Joueur 1");
-        //Joueur joueur2 = new Joueur("Joueur 2");
         
-        //System.out.println(joueur.getNom() + ", appuyez sur Entrée pour lancer le dé.");
-
-        // Générer un nombre aléatoire entre 1 et 6 pour simuler le dé
-        Random random = new Random();
-        int result = random.nextInt(6) + 1;
-
-        //System.out.println(joueur.getNom() + " a obtenu un " + resultatDe + "!");
-        //joueur.ajouterAuScore(resultatDe);
-        JOptionPane.showMessageDialog(null,"Alice, qui a gagné ?");
+        int player1Roll = rollDice();
+        int player2Roll = rollDice();
         
     }
     
+        public static int rollDice() {
+        Random random = new Random();
+        return random.nextInt(6) + 1; // Generates a random number between 1 and 6
+    }
+
     /**
      *ThumbWar : Alice and the twins play together
      *

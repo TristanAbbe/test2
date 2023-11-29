@@ -11,11 +11,13 @@ public class Alice extends Character
     // variables d'instance - remplacez l'exemple qui suit par le vôtre/**
     List<Object> Inventory = new ArrayList<>();
     private int hunger;
+    private boolean death = false ;
     
     public Alice()
     {
         // initialisation des variables d'instance
         super("Alice", "Hello, I am Alice");
+        
     }
 
     /**
@@ -25,9 +27,7 @@ public class Alice extends Character
      * @return     la somme de x et de y
      */
     public void move() {
-        // Code pour déplacer Alice dans le labyrinthe
-
-
+        
     }
     
 }
