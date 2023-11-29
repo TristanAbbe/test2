@@ -20,14 +20,13 @@ public class MiniGame
     }
 
     /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
+     *Dice game : queen of hearts and Alice play together
+     *values of dice are random - Alice chooses the rules, she needs to lose to win the game
      *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
      */
-    public int sampleMethod(int y)
+    public int DiceGame ()
     {
         // Insérez votre code ici
-        return x + y;
+        return x;
     }
 }
