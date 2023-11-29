@@ -21,8 +21,8 @@ public class Character
     {
         this.name = name;
         this.description = description;
-        Character personnage = new Character("CheshireCat", "Une description.");
-        personnage.dialogue(); // Cela affichera la boîte de dialogue
+        Character personnage = new Character(name, description);
+        personnage.dialogue(); // Afficher la boite de dialogue
     }
 
     // Getters et setters (méthodes d'accès)
