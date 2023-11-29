@@ -38,8 +38,8 @@ public class Room
      */
     public Room(String description) 
     {
-    //    this.description = description;
-    //    exits = new HashMap<>();
+        this.description = description;
+        exits = new HashMap<>();
     }
 
     /**
@@ -52,7 +52,7 @@ public class Room
      * @version version 2017-02 Question 3
      */
     public Room getExit(String direction){
-    //       return exits.get(direction);
+           return exits.get(direction);
     }
     
     /**
@@ -68,25 +68,14 @@ public class Room
     //        exits.put(direction, neighbor);
     }
     
-    /**
-     * Method getExitString *** to be commented
-     *
-     */
-    public String getExitString(){
-    //    String returnString = "Exits:";
-    //    Set<String> keys = exits.keySet();
-    //    for(String exit : keys) {
-    //        returnString += " " + exit;
-    //    }
-    //    return returnString;
-    }
+    
     
     /**
      * @return The description of the room.
      */
     public String getDescription()
     {
-    //   return description;
+       return description;
     }
 
 }
