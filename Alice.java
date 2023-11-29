@@ -10,6 +10,7 @@ public class Alice extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre/**
     List<Object> Inventary = new ArrayList<>();
+    private int hunger;
     
     public Alice()
     {
