@@ -9,7 +9,6 @@ import javax.swing.JOptionPane;
 public class MiniGame
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int score;
 
     /**
      * Constructeur d'objets de classe MiniGame
