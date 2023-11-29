@@ -8,7 +8,6 @@
 public class Twins extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
 
     /**
      * Constructeur d'objets de classe Twins
@@ -16,7 +15,7 @@ public class Twins extends Character
     public Twins()
     {
         // initialisation des variables d'instance
-        x = 0;
+        super("Twins TweedleDee and TweedleDum", "Hi ! We are the twins TweedleDee and TweedleDum"); ;
     }
 
     /**
@@ -25,9 +24,10 @@ public class Twins extends Character
      * @param  y   le paramètre de la méthode
      * @return     la somme de x et de y
      */
-    public int sampleMethod(int y)
+    @Override
+    void dialogue()
     {
         // Insérez votre code ici
-        return x + y;
+        
     }
 }

@@ -8,14 +8,15 @@
 public class CheshireCat extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
+    
+    
     /**
      * Constructeur d'objets de classe CheshireCat
      */
     public CheshireCat()
     {
         // initialisation des variables d'instance
-        x=0;
+        super("Cheshire Cat", "I am the Cheshire Cat : welcome in the game");
     }
 
     /**
@@ -24,9 +25,10 @@ public class CheshireCat extends Character
      * @param  y   le paramètre de la méthode
      * @return     la somme de x et de y
      */
-    public int sampleMethod(int y)
+    @Override
+    void dialogue()
     {
         // Insérez votre code ici
-        return x + y;
+        
     }
 }
