@@ -13,10 +13,10 @@ public class NPC
     /**
      * Constructeur d'objets de classe NPC
      */
-    public NPC()
+    public NPC(String name)
     {
         // initialisation des variables d'instance
-        x = 0;
+        
     }
 
     /**
@@ -25,9 +25,11 @@ public class NPC
      * @param  y   le paramètre de la méthode
      * @return     la somme de x et de y
      */
-    public int sampleMethod(int y)
-    {
-        // Insérez votre code ici
-        return x + y;
+    
+    public void interactWithAlice(Alice alice) {
+        // Code pour gérer l'interaction avec Alice
     }
+
+    // Autres méthodes et propriétés nécessaires
+
 }
