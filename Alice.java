@@ -5,7 +5,7 @@
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Alice
+public class Alice extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
@@ -25,9 +25,15 @@ public class Alice
      * @param  y   le paramètre de la méthode
      * @return     la somme de x et de y
      */
-    public int sampleMethod(int y)
-    {
-        // Insérez votre code ici
-        return x + y;
+    public void move() {
+        // Code pour déplacer Alice dans le labyrinthe
+
+
     }
+    
+    public void interactWithNPC(NPC npc) {
+        // Code pour interagir avec les personnages non-jouables
+    }
+
+    // Autres méthodes et propriétés nécessaires
 }
