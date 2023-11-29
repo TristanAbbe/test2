@@ -16,16 +16,7 @@ public class MiniGame
      */
     public MiniGame()
     {
-        // initialisation des variables d'instance
-        score = 0;
-    }
-    
-    public int getScore() {
-        return score;
-    }
-    
-    public void addToScore(int points) {
-        this.score += points;
+        
     }
     
     /**
