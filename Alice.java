@@ -13,6 +13,7 @@ public class Alice extends Character
     List<Object> inventory = new ArrayList<>();
     private int hunger;
     private boolean death = false ;
+    private Room currentRoom ;
     
     public Alice()
     {
@@ -20,6 +21,34 @@ public class Alice extends Character
         super("Alice", "Hello, I am Alice");
         
     }
+    
+    /**
+     * This method allows Alice to move, her hunger level gets closer to 0 when she moves
+     */
+    public void move(int orientation) 
+    {
+        if (!death) 
+        {
+        String direction = null;//bouton déplacement 
+        Room nextRoom = null;
+        nextRoom = currentRoom.getExit(direction);
+
+        if (nextRoom == null) {
+            System.out.println("There is no room!");
+            }
+        else 
+        {
+            currentRoom = nextRoom;
+            
+        }
+        //elle avance
+        hunger=hunger-10;
+            if (hunger==0) 
+                {
+                death=true;
+                }
+            }
+        }
     
     public void feed()
     {
