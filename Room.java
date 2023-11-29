@@ -14,6 +14,8 @@ import java.util.HashMap;
 public class Room {
     private String name;
     private String description;
+    private String name;
+    
     private HashMap<String, Room> exits;
 
     /**
@@ -21,9 +23,16 @@ public class Room {
      * @param name The room's name.
      * @param description The room's description.
      */
+<<<<<<< HEAD
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
+=======
+    public Room(String description,String name) 
+    {
+        this.name = setName(name);
+        this.description = setDescription(description);
+>>>>>>> 1da73c062405a683d98644b17bbc393c0c266b65
         exits = new HashMap<>();
     }
 
@@ -36,6 +45,25 @@ public class Room {
         exits.put(direction, neighbor);
     }
 
+<<<<<<< HEAD
+=======
+     * @version version 2017-02 Question 3
+     */
+    public void setExit(String direction, Room neighbor){
+    //        exits.put(direction, neighbor);
+    }
+    
+        /**
+     * Get the name of the room
+     * 
+     * @return name The name of the room.
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+>>>>>>> 1da73c062405a683d98644b17bbc393c0c266b65
     /**
      * Get the name of the room.
      * @return The name of the room.

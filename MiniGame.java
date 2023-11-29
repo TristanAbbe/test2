@@ -33,7 +33,7 @@ public class MiniGame
      *values of dice are random - Alice chooses the rules, she needs to lose to win the game
      *
      */
-    public int DiceGame ()
+    public void DiceGame ()
     {
         // Insérez votre code ici
         System.out.println("Bienvenue dans le jeu de dés !");
@@ -48,6 +48,16 @@ public class MiniGame
 
         //System.out.println(joueur.getNom() + " a obtenu un " + resultatDe + "!");
         //joueur.ajouterAuScore(resultatDe);
+        System.out.println("Alice, qui a gagné ?");
+        
+    }
+    
+    /**
+     *ThumbWar : Alice and the twins play together
+     *
+     */
+    public void ThumbWar()
+    {
         
     }
 }

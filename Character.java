@@ -19,10 +19,8 @@ public class Character
      */
     public Character(String name, String description)
     {
-        this.name = name;
-        this.description = description;
-        Character personnage = new Character("CheshireCat", "Une description.");
-        personnage.dialogue(); // Cela affichera la boîte de dialogue
+        setName(name);
+        setDescription(description);
     }
 
     // Getters et setters (méthodes d'accès)
@@ -44,7 +42,5 @@ public class Character
 
     // Méthode pour afficher un dialogue
     public void dialogue() {
-        String message = "Bonjour, je suis " + name + ". " + description;
-        JOptionPane.showMessageDialog(null, message, "Dialogue de " + name, JOptionPane.INFORMATION_MESSAGE);
     }
 }
