@@ -21,25 +21,6 @@ public class Alice extends Character
         
     }
     
-    /**
-     * This method allows Alice to move, her hunger level gets closer to 0 when she moves
-     */
-    public void move() 
-    {
-        if (!death) {
-            //elle avance
-            hunger=hunger-10;
-        if (hunger==0) {
-            death=true;
-        }
-        }
-    }
-    
-    public void inventory()
-    {
-        //gerer l'inventaire
-    }
-    
     public void feed()
     {
         if (!death) {
