@@ -1,4 +1,4 @@
-
+import javax.swing.JOptionPane;
 /**
  * Décrivez votre classe Character ici.
  *
@@ -21,6 +21,8 @@ public class Character
     {
         this.name = name;
         this.description = description;
+        Character personnage = new Character("CheshireCat", "Une description.");
+        personnage.dialogue(); // Cela affichera la boîte de dialogue
     }
 
     // Getters et setters (méthodes d'accès)
@@ -39,7 +41,10 @@ public class Character
     public void setDescription(String description) {
         this.description = description;
     }
-    
-    public void dialogue
-    // chaque perso on recuperre la metgode dialogue et vcreer boite dialgue
+
+    // Méthode pour afficher un dialogue
+    public void dialogue() {
+        String message = "Bonjour, je suis " + name + ". " + description;
+        JOptionPane.showMessageDialog(null, message, "Dialogue de " + name, JOptionPane.INFORMATION_MESSAGE);
+    }
 }
