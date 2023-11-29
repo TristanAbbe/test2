@@ -5,7 +5,7 @@
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Game
+public class AliceInWonderlandGame
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
@@ -13,7 +13,7 @@ public class Game
     /**
      * Constructeur d'objets de classe Game
      */
-    public Game()
+    public AliceInWonderlandGame()
     {
         // initialisation des variables d'instance
         x = 0;
