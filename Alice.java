@@ -31,7 +31,4 @@ public class Alice extends Character
 
     }
     
-    public void interactWithNPC(NPC npc) {
-        // Code pour interagir avec les personnages non-jouables
-    }
 }
