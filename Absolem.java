@@ -27,8 +27,8 @@ public class Absolem extends Character
     {
         //ask for a Doubiprane if he is headache
         if (headache ==true)
-        System.out.println("As-tu un Doubiprane pour soulager mon mal de tête ?");
+        //ask for a Doubiprane
         else 
-        System.out.println("Je suis en pleine forme");
+        //nothing to say
     }
 }
