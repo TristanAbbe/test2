@@ -1,79 +1,75 @@
 import java.util.HashMap;
-import java.util.Set;
 
 /**
  * Class Room - a room in an adventure game.
+ * This class is part of a text-based adventure game.
  *
- * This class is part of the "World of Zuul" application. 
- * "World of Zuul" is a very simple, text based adventure game.  
- *
- * A "Room" represents one location in the scenery of the game.  It is 
- * connected to other rooms via exits.  The exits are labelled north, 
- * east, south, west.  For each direction, the room stores a reference
- * to the neighboring room, or null if there is no exit in that direction.
- * 
- * @author  Michael Kolling and David J. Barnes
- * @version 2006.03.30
- * 
- * Modified versions
+ * A "Room" represents one location in the game. It is connected to
+ * other rooms via exits. The exits are labeled by cardinal points
+ * such as north, east, south, west.
  * 
  * @author MAZURIE Jules
- *
- * @version 29/11/23
- * This version is the correction of Question 3 of the OOD-OOP training.
- * It consists in:
- *      - replacing the exit attributes by a HashMap
- *      - adding a setExit method
- *  */
-public class Room 
-{
+ * @version 29/11/2023
+ */
+public class Room {
+    private String name;
     private String description;
     private HashMap<String, Room> exits;
 
     /**
-     * Create a room described "description". Initially, it has
-     * no exits. "description" is something like "a kitchen" or
-     * "an open court yard".
+     * Constructor for objects of class Room
+     * @param name The room's name.
      * @param description The room's description.
      */
-    public Room(String description) 
-    {
+    public Room(String name, String description) {
+        this.name = name;
         this.description = description;
         exits = new HashMap<>();
     }
 
     /**
-     * Method getExit: returns the room that we reach in the given direction
-     * If there is no room in that direction, returns null
-     *
-     * @param direction The exit's direction
-     * @return The roomin the given direction
-     * 
-     * @version version 2017-02 Question 3
+     * Define an exit from this room.
+     * @param direction The exit's direction.
+     * @param neighbor The neighboring room.
      */
-    public Room getExit(String direction){
-           return exits.get(direction);
+    public void setExit(String direction, Room neighbor) {
+        exits.put(direction, neighbor);
     }
-    
-    /**
-     * Method setExit: defines an exit from this room
-     * Replaces the setExits method
-     *
-     * @param direction the direction of the exit
-     * @param neighbor the room in the given direction
 
-     * @version version 2017-02 Question 3
-     */
-    public void setExit(String direction, Room neighbor){
-    //        exits.put(direction, neighbor);
-    }
-    
     /**
+     * Get the name of the room.
+     * @return The name of the room.
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * Get the description of the room.
      * @return The description of the room.
      */
-    public String getDescription()
-    {
-       return description;
+    public String getDescription() {
+        return description;
     }
 
+    /**
+     * Get the neighboring room in the given direction.
+     * @param direction The exit's direction.
+     * @return The neighboring room.
+     */
+    public Room getExit(String direction) {
+        return exits.get(direction);
+    }
+
+    /**
+     * Get a string representation of the exits.
+     * @return A string representing the exits.
+     */
+    public String getExitString() {
+        StringBuilder exitString = new StringBuilder("Exits: ");
+        for (String direction : exits.keySet()) {
+            exitString.append(direction).append(" ");
+        }
+        return exitString.toString().trim();
+    }
 }
