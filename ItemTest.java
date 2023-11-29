@@ -1,25 +1,25 @@
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class ObjectTest {
+public class ItemTest {
 
     @Test
-    public void testObjectCreation() {
-        Object myObject = new Object("Example Object", "This is an example object.");
-        assertEquals("Example Object", myObject.getName());
-        assertEquals("This is an example object.", myObject.getDescription());
+    public void testItemCreation() {
+        Item myItem = new Item("Example Item", "This is an example item.");
+        assertEquals("Example item", myItem.getName());
+        assertEquals("This is an example item.", myItem.getDescription());
     }
 
     @Test
     public void testSetName() {
-        Object myObject = new Object("Initial Name", "Initial Description");
+        Item myItem = new Item("Initial Name", "Initial Description");
 
-        myObject.setName("New Name");
-        assertEquals("New Name", myObject.getName());
+        myItem.setName("New Name");
+        assertEquals("New Name", myItem.getName());
 
         // Test setting an empty name
         try {
-            myObject.setName("");
+            myItem.setName("");
             fail("Expected IllegalArgumentException not thrown for empty name.");
         } catch (IllegalArgumentException e) {
             assertEquals("Name cannot be null or empty.", e.getMessage());
@@ -27,7 +27,7 @@ public class ObjectTest {
 
         // Test setting a null name
         try {
-            myObject.setName(null);
+            myItem.setName(null);
             fail("Expected IllegalArgumentException not thrown for null name.");
         } catch (IllegalArgumentException e) {
             assertEquals("Name cannot be null or empty.", e.getMessage());
@@ -36,14 +36,14 @@ public class ObjectTest {
 
     @Test
     public void testSetDescription() {
-        Object myObject = new Object("Initial Name", "Initial Description");
+        Item myItem = new Item("Initial Name", "Initial Description");
 
-        myObject.setDescription("New Description");
-        assertEquals("New Description", myObject.getDescription());
+        myItem.setDescription("New Description");
+        assertEquals("New Description", myItem.getDescription());
 
         // Test setting an empty description
         try {
-            myObject.setDescription("");
+            myItem.setDescription("");
             fail("Expected IllegalArgumentException not thrown for empty description.");
         } catch (IllegalArgumentException e) {
             assertEquals("Description cannot be null or empty.", e.getMessage());
@@ -51,7 +51,7 @@ public class ObjectTest {
 
         // Test setting a null description
         try {
-            myObject.setDescription(null);
+            myItem.setDescription(null);
             fail("Expected IllegalArgumentException not thrown for null description.");
         } catch (IllegalArgumentException e) {
             assertEquals("Description cannot be null or empty.", e.getMessage());
