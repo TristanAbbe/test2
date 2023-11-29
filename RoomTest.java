@@ -5,37 +5,31 @@ public class RoomTest {
 
     @Test
     public void testRoomCreation() {
-        // Create a room and check its properties
-        Room room = new Room("Kitchen", "This is a kitchen.");
-        assertEquals("Kitchen", room.getName());
-        assertEquals("This is a kitchen.", room.getDescription());
+        Room myRoom = new Room("This is a room.", "Example Room");
+
+        assertEquals("Example Room", myRoom.getName());
+        assertEquals("This is a room.", myRoom.getDescription());
     }
 
     @Test
-    public void testSetAndGetExit() {
-        // Create two rooms
-        Room room1 = new Room("Living Room", "This is a living room.");
-        Room room2 = new Room("Bedroom", "This is a bedroom.");
+    public void testSetExit() {
+        Room room1 = new Room("Room 1", "First Room");
+        Room room2 = new Room("Room 2", "Second Room");
 
-        // Set an exit from room1 to room2
         room1.setExit("north", room2);
 
-        // Check if the exit is set correctly
         assertEquals(room2, room1.getExit("north"));
     }
 
     @Test
     public void testGetExitString() {
-        // Create a room and set exits
-        Room room = new Room("Hallway", "This is a hallway.");
-        Room roomNorth = new Room("North Room", "This is the north room.");
-        Room roomSouth = new Room("South Room", "This is the south room.");
+        Room room = new Room("Room with exits", "Exit Room");
+        Room neighbor1 = new Room("Neighbor 1", "First Neighbor");
+        Room neighbor2 = new Room("Neighbor 2", "Second Neighbor");
 
-        room.setExit("north", roomNorth);
-        room.setExit("south", roomSouth);
+        room.setExit("north", neighbor1);
+        room.setExit("east", neighbor2);
 
-        // Check if the string of exits is generated correctly
-        String expected = "Exits: north south";
-        assertEquals(expected, room.getExitString());
+        assertEquals("Exits: north east", room.getExitString());
     }
 }

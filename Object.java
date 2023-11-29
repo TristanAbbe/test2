@@ -19,7 +19,6 @@ public class Object
     {
         setName(name);
         setDescription(description);
-        
     }
     
     public void setName(String name){
