@@ -27,9 +27,9 @@ public class Absolem extends Character
     {
         //ask for a Doubiprane if he is headache
          if (headache) {
-            JOptionPane.showMessageDialog(null, "J'ai mal à la tête, j'ai besoin d'un Doubiprane !");
+            JOptionPane.showMessageDialog(null, "I am headache, I need a Doubiprane !");
         } else {
-            JOptionPane.showMessageDialog(null, "Je vais bien, je n'ai pas mal à la tête !");
+            JOptionPane.showMessageDialog(null, "I am good, I am not headache");
         }
     }
 }

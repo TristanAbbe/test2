@@ -17,7 +17,7 @@ public class QueenOfHearts extends Character
     public QueenOfHearts()
     {
         // initialisation des variables d'instance
-        x = 0;
+        super("Queen of Hearts","Respect me I am the Queen of Hearts");
     }
 
     /**
@@ -26,9 +26,10 @@ public class QueenOfHearts extends Character
      * @param  y   le paramètre de la méthode
      * @return     la somme de x et de y
      */
-    public int sampleMethod(int y)
+    @Override
+    public void dialogue()
     {
         // Insérez votre code ici
-        return x + y;
+        
     }
 }

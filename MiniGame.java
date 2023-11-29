@@ -1,5 +1,5 @@
 import java.util.Random;
-
+import javax.swing.JOptionPane;
 /**
  * Décrivez votre classe MiniGame ici.
  *
@@ -36,7 +36,7 @@ public class MiniGame
     public void DiceGame ()
     {
         // Insérez votre code ici
-        System.out.println("Bienvenue dans le jeu de dés !");
+        JOptionPane.showMessageDialog(null,"Bienvenue dans le jeu de dés !");
         //Joueur joueur1 = new Joueur("Joueur 1");
         //Joueur joueur2 = new Joueur("Joueur 2");
         
@@ -48,7 +48,7 @@ public class MiniGame
 
         //System.out.println(joueur.getNom() + " a obtenu un " + resultatDe + "!");
         //joueur.ajouterAuScore(resultatDe);
-        System.out.println("Alice, qui a gagné ?");
+        JOptionPane.showMessageDialog(null,"Alice, qui a gagné ?");
         
     }
     
