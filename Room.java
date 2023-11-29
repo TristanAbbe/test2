@@ -40,7 +40,7 @@ public class Room
      */
     public Room(String description,String name) 
     {
-        this.name = setName(name)
+        this.name = setName(name);
         this.description = setDescription(description);
         exits = new HashMap<>();
     }
@@ -70,7 +70,6 @@ public class Room
     public void setExit(String direction, Room neighbor){
     //        exits.put(direction, neighbor);
     }
-    
     
         /**
      * Get the name of the room
