@@ -23,7 +23,7 @@ public class Event
         } else if (currentRoom.getName().equals("Heart queen arena")) {
             // Lancer mini-jeu de dès
         } else if (currentRoom.getName().equals("Caterpillar cadle")) {
-            // Echanger Doubiprane contre Soie
+            // Exchange Doubiprane - Silk
             //Chenille chenille = findChenilleInRoom(currentRoom);
 
             //if (chenille != null && alice.getInventory().contains("Doubiprane")) {
@@ -31,7 +31,7 @@ public class Event
             //    alice.getInventory().add("Silk");
             //} 
         } else if (currentRoom.getName().equals("Hatmaker's bunker")) {
-            // Echanger Soie contre casque
+            // Exchange Silk - Helmet
             //MadHatter madhatter = findMadHatterInRoom(currentRoom);
 
             //if (madhatter != null && alice.getInventory().contains("Silk")) {
