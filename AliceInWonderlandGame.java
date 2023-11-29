@@ -7,7 +7,7 @@
  */
 public class AliceInWonderlandGame
 {   private Room room;
-    private object object;
+    private Object object;
     /**
      * Constructeur d'objets de classe Game
      */
