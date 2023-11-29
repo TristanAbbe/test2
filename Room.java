@@ -14,7 +14,6 @@ import java.util.HashMap;
 public class Room {
     private String name;
     private String description;
-    
     private HashMap<String, Room> exits;
 
   
@@ -34,7 +33,7 @@ public class Room {
         exits.put(direction, neighbor);
     }
     
-        public void setName(String name){
+    public void setName(String name){
         if (name != null && !name.trim().isEmpty()) {
             this.name = name.trim(); // Trim leading and trailing whitespaces
         } else {
