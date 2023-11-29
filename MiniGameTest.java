@@ -1,72 +1,38 @@
+import org.junit.Test;
+import static org.junit.Assert.*;
 
+public class MiniGameTest {
 
-import static org.junit.jupiter.api.Assertions.*;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
-
-/**
- * Classe-test MiniGameTest.
- *
- * @author  (votre nom)
- * @version (un numéro de version ou une date)
- *
- * Les classes-test sont documentées ici :
- * http://junit.sourceforge.net/javadoc/junit/framework/TestCase.html
- * et sont basées sur le document Š 2002 Robert A. Ballance intitulé
- * "JUnit: Unit Testing Framework".
- *
- * Les objets Test (et TestSuite) sont associés aux classes à tester
- * par la simple relation yyyTest (e.g. qu'un Test de la classe Name.java
- * se nommera NameTest.java); les deux se retrouvent dans le męme paquetage.
- * Les "engagements" (anglais : "fixture") forment un ensemble de conditions
- * qui sont vraies pour chaque méthode Test à exécuter.  Il peut y avoir
- * plus d'une méthode Test dans une classe Test; leur ensemble forme un
- * objet TestSuite.
- * BlueJ découvrira automatiquement (par introspection) les méthodes
- * Test de votre classe Test et générera la TestSuite conséquente.
- * Chaque appel d'une méthode Test sera précédé d'un appel de setUp(),
- * qui réalise les engagements, et suivi d'un appel à tearDown(), qui les
- * détruit.
- */
-public class MiniGameTest
-{
-    // Définissez ici les variables d'instance nécessaires à vos engagements;
-    // Vous pouvez également les saisir automatiquement du présentoir
-    // à l'aide du menu contextuel "Présentoir --> Engagements".
-    // Notez cependant que ce dernier ne peut saisir les objets primitifs
-    // du présentoir (les objets sans constructeur, comme int, float, etc.).
-    protected double fValeur1;
-    protected double fValeur2;
-
-    /**
-     * Constructeur de la classe-test MiniGameTest
-     */
-    public MiniGameTest()
-    {
+    @Test
+    public void testMiniGameCreation() {
+        // Create a MiniGame and check its initial score
+        MiniGame miniGame = new MiniGame();
+        assertEquals(0, miniGame.getScore());
     }
 
-    /**
-     * Met en place les engagements.
-     *
-     * Méthode appelée avant chaque appel de méthode de test.
-     */
-    @BeforeEach
-    public void setUp() // throws java.lang.Exception
-    {
-        // Initialisez ici vos engagements
-        fValeur1= 2.0;
-        fValeur2= 3.0;
+    @Test
+    public void testAddToScore() {
+        // Create a MiniGame and add points to its score
+        MiniGame miniGame = new MiniGame();
+        miniGame.addToScore(10);
+        assertEquals(10, miniGame.getScore());
     }
 
-    /**
-     * Supprime les engagements
-     *
-     * Méthode appelée après chaque appel de méthode de test.
-     */
-    @AfterEach
-    public void tearDown() // throws java.lang.Exception
-    {
-        //Libérez ici les ressources engagées par setUp()
+    @Test
+    public void testDiceGame() {
+        // Create a MiniGame and simulate playing the Dice Game
+        MiniGame miniGame = new MiniGame();
+        miniGame.DiceGame();
+        // Check the score after playing the game (adjust based on the actual logic of the game)
+        assertTrue(miniGame.getScore() >= 0); // Assuming the score can't be negative
+    }
+
+    @Test
+    public void testThumbWar() {
+        // Create a MiniGame and simulate playing Thumb War
+        MiniGame miniGame = new MiniGame();
+        miniGame.ThumbWar();
+        // Check the score after playing the game (adjust based on the actual logic of the game)
+        assertTrue(miniGame.getScore() >= 0); // Assuming the score can't be negative
     }
 }
