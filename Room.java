@@ -28,11 +28,6 @@ import java.util.Set;
 public class Room 
 {
     private String description;
-    // version 2017-02 Question 3: creating the HashMap to replace the different exits
-//     public Room northExit;
-//     public Room southExit;
-//     public Room eastExit;
-//     public Room westExit;
     private HashMap<String, Room> exits;
 
     /**
@@ -43,32 +38,9 @@ public class Room
      */
     public Room(String description) 
     {
-        this.description = description;
-        // version 2017-02 Question 3: init the hashMap
-        exits = new HashMap<>();
+    //    this.description = description;
+    //    exits = new HashMap<>();
     }
-
-//     /**
-//      * Define the exits of this room.  Every direction either leads
-//      * to another room or is null (no exit there).
-//      * @param north The north exit.
-//      * @param east The east east.
-//      * @param south The south exit.
-//      * @param west The west exit.
-//      */
-//     public void setExits(Room north, Room east, Room south, Room west) 
-//     {
-//         if(north != null)
-//             // version 2017-02 Question 3: change attribute access (same for all directions)
-//             // northExit = north;
-//             exits.put("north", north);
-//         if(east != null)
-//             exits.put("east", east);
-//         if(south != null)
-//             exits.put("south", south);
-//         if(west != null)
-//             exits.put("west", west);
-//     }
 
     /**
      * Method getExit: returns the room that we reach in the given direction
@@ -80,7 +52,7 @@ public class Room
      * @version version 2017-02 Question 3
      */
     public Room getExit(String direction){
-            return exits.get(direction);
+    //       return exits.get(direction);
     }
     
     /**
@@ -93,7 +65,7 @@ public class Room
      * @version version 2017-02 Question 3
      */
     public void setExit(String direction, Room neighbor){
-            exits.put(direction, neighbor);
+    //        exits.put(direction, neighbor);
     }
     
     /**
@@ -101,12 +73,12 @@ public class Room
      *
      */
     public String getExitString(){
-        String returnString = "Exits:";
-        Set<String> keys = exits.keySet();
-        for(String exit : keys) {
-            returnString += " " + exit;
-        }
-        return returnString;
+    //    String returnString = "Exits:";
+    //    Set<String> keys = exits.keySet();
+    //    for(String exit : keys) {
+    //        returnString += " " + exit;
+    //    }
+    //    return returnString;
     }
     
     /**
@@ -114,7 +86,7 @@ public class Room
      */
     public String getDescription()
     {
-        return description;
+    //   return description;
     }
 
 }
