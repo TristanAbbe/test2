@@ -1,22 +1,22 @@
 
 /**
- * Décrivez votre classe CheshireCat ici.
+ * Décrivez votre classe Event ici.
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class CheshireCat extends Character
+public class Event
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    
-    
+    private int x;
+
     /**
-     * Constructeur d'objets de classe CheshireCat
+     * Constructeur d'objets de classe Event
      */
-    public CheshireCat()
+    public Event()
     {
         // initialisation des variables d'instance
-        super("Cheshire Cat", "I am the Cheshire Cat : welcome in the game");
+        x = 0;
     }
 
     /**
@@ -25,10 +25,9 @@ public class CheshireCat extends Character
      * @param  y   le paramètre de la méthode
      * @return     la somme de x et de y
      */
-    @Override
-    public void dialogue()
+    public int sampleMethod(int y)
     {
         // Insérez votre code ici
-        
+        return x + y;
     }
 }

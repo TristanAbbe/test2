@@ -6,7 +6,8 @@
  * @version (un numéro de version ou une date)
  */
 public class AliceInWonderlandGame
-{
+{   private Room room;
+    private object object;
     /**
      * Constructeur d'objets de classe Game
      */
