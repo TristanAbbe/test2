@@ -27,16 +27,16 @@ public class Event
             //Chenille chenille = findChenilleInRoom(currentRoom);
 
             //if (chenille != null && alice.getInventory().contains("Doubiprane")) {
-            //    alice.getInventory().remove("Doubiprane");
-            //    alice.getInventory().add("Silk");
+            //    alice.removeItem(Doubiprane);
+            //    alice.addItem(Silk);
             //} 
         } else if (currentRoom.getName().equals("Hatmaker's bunker")) {
             // Exchange Silk - Helmet
             //MadHatter madhatter = findMadHatterInRoom(currentRoom);
 
             //if (madhatter != null && alice.getInventory().contains("Silk")) {
-            //    alice.getInventory().remove("Silk");
-            //    alice.getInventory().add("Helmet");
+            //    alice.removeItem(Silk);
+            //    alice.addItem(Helmet);
             //}
         } else if (currentRoom.getName().equals("Body-card garden")) {
             // If helmet Alice can pass otherwise she dies
@@ -47,7 +47,7 @@ public class Event
         } else if (currentRoom.getName().equals("Joyless toilets")) {
             // If flushed 3 times --> END OF GAME
         } else {
-            // Alice is in another room...
+            // Alice est dans une autre piece...
         }
     }
 
