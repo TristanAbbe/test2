@@ -45,7 +45,15 @@ public class Alice extends Character
         public void addItem(Item item)
     {
         inventory.add(item);
-    }
+    }    
+    
+    public void removeItem(Item item)
+    {
+        if (inventory.contains(item))
+            inventory.remove(item);
+        else
+            System.out.println("There is no such item in the inventory");
+    } 
     
         public void displayInventory() 
     {
