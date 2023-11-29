@@ -17,25 +17,37 @@ public class Event
 
     public void handleRoomEvent (Alice alice, Room currentRoom) {
         if (currentRoom.getName().equals("Catwalk")) {
-            // Lapin parler en fonction de l'avancement du jeu
+            // Rabbit speaks depending on the progress of the game
         } else if (currentRoom.getName().equals("Thumbs war room")) {
-            // Lancer mini-jeu de pouces
+            // Start mini-game thumb war
         } else if (currentRoom.getName().equals("Heart queen arena")) {
-            // Lancer mini-jeu de dès
+            // Roll dice mini-game
         } else if (currentRoom.getName().equals("Caterpillar cadle")) {
-            // Echanger Doubiprane contre Soie
+            // Exchange Doubiprane - Silk
+            //Chenille chenille = findChenilleInRoom(currentRoom);
+
+            //if (chenille != null && alice.getInventory().contains("Doubiprane")) {
+            //    alice.getInventory().remove("Doubiprane");
+            //    alice.getInventory().add("Silk");
+            //} 
         } else if (currentRoom.getName().equals("Hatmaker's bunker")) {
-            // Echanger Soie contre casque
+            // Exchange Silk - Helmet
+            //MadHatter madhatter = findMadHatterInRoom(currentRoom);
+
+            //if (madhatter != null && alice.getInventory().contains("Silk")) {
+            //    alice.getInventory().remove("Silk");
+            //    alice.getInventory().add("Helmet");
+            //}
         } else if (currentRoom.getName().equals("Body-card garden")) {
-            // Si casque elle peut passer sinon elle meurt
+            // If helmet Alice can pass otherwise she dies
         } else if (currentRoom.getName().equals("Glorious rabbit hole")) {
-            // Lapin fait la devinette
+            // Rabbit guesses
         } else if (currentRoom.getName().equals("Beaver River")) {
-            // Si Alice a pris la potion sans manger le Grasnolax -> Mort
+            // If Alice took the potion without eating the Grasnolax -> Death
         } else if (currentRoom.getName().equals("Joyless toilets")) {
-            // Si chasse d'eau tirée 3 fois --> FIN DU JEU
+            // If flushed 3 times --> END OF GAME
         } else {
-            // Alice est dans une autre piece...
+            // Alice is in another room...
         }
     }
 
