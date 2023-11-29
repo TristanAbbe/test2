@@ -8,7 +8,8 @@
 public class Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
+    private String name;
+    private int position;
 
     /**
      * Constructeur d'objets de classe Character
@@ -16,7 +17,7 @@ public class Character
     public Character()
     {
         // initialisation des variables d'instance
-        x = 0;
+        position = 0;
     }
 
     /**
@@ -28,6 +29,6 @@ public class Character
     public int sampleMethod(int y)
     {
         // Insérez votre code ici
-        return x + y;
+        return position+ y;
     }
 }

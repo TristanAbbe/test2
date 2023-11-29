@@ -16,7 +16,7 @@ public class Absolem
     public Absolem()
     {
         // initialisation des variables d'instance
-        x = 0;
+        x=0;
     }
 
     /**
