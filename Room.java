@@ -68,8 +68,6 @@ public class Room
     //        exits.put(direction, neighbor);
     }
     
-    
-    
     /**
      * @return The description of the room.
      */
