@@ -16,7 +16,7 @@ public class MarchHare extends Character
     public MarchHare()
     {
         // initialisation des variables d'instance
-        x = 0;
+        super("MarchHare","Hi, I am the Marche Hare and we are late !");
     }
 
     /**

@@ -16,7 +16,7 @@ public class Alice extends Character
     public Alice()
     {
         // initialisation des variables d'instance
-        x = 0;
+        super("Alice", "Hello, I am Alice");
     }
 
     /**

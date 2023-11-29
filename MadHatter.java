@@ -16,7 +16,7 @@ public class MadHatter extends Character
     public MadHatter()
     {
         // initialisation des variables d'instance
-        x = 0;
+        super("MadHatter","Hello my dear you are in front of the Mad Hatter!");
     }
 
     /**
