@@ -5,7 +5,7 @@
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Object 
+public class Item 
 {
     private String name;
     private String description;
@@ -13,9 +13,9 @@ public class Object
     private boolean removable; // if true the item can be removable
 
     /**
-     * Constructeur d'objets de classe Object
+     * Constructeur d'objets de classe Item
      */
-    public Object(String name, String description)
+    public Item(String name, String description)
     {
         setName(name);
         setDescription(description);
