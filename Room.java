@@ -28,6 +28,8 @@ import java.util.Set;
 public class Room 
 {
     private String description;
+    private String name;
+    
     private HashMap<String, Room> exits;
 
     /**
@@ -36,9 +38,10 @@ public class Room
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) 
+    public Room(String description,String name) 
     {
-        this.description = description;
+        this.name = setName(name)
+        this.description = setDescription(description);
         exits = new HashMap<>();
     }
 
@@ -69,6 +72,15 @@ public class Room
     }
     
     
+        /**
+     * Get the name of the room
+     * 
+     * @return name The name of the room.
+     */
+    public String getName()
+    {
+        return name;
+    }
     
     /**
      * @return The description of the room.
