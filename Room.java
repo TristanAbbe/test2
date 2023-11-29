@@ -63,7 +63,11 @@ public class Room {
     public String getDescription() {
         return description;
     }
-
+    
+    // public Room changeRom(String direction){
+        
+    // }
+    
     /**
      * Get the neighboring room in the given direction.
      * @param direction The exit's direction.
