@@ -1,9 +1,8 @@
-<<<<<<< HEAD
-=======
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import javax.swing.*;
->>>>>>> 466de7b8508159b1331cabaef9cf3c80bdc13a6a
+
 /**
  * Décrivez votre classe Game ici.
  *
