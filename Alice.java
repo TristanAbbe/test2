@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 /**
  * Décrivez votre classe Alice ici.
  *
@@ -9,7 +10,7 @@ import java.util.List;
 public class Alice extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre/**
-    List<Object> Inventory = new ArrayList<>();
+    List<Object> inventory = new ArrayList<>();
     private int hunger;
     private boolean death = false ;
     
@@ -44,12 +45,9 @@ public class Alice extends Character
         if (!death) {
             //browse the list to know if she owns a taco
             for (int i = 0; i < inventory.size(); i++) {
-            String element = inventory.get(i);
+            Object element = inventory.get(i);
             JOptionPane.showMessageDialog(null, element);
         }
-        if () {
-                
-            }
         }
     }
     

@@ -26,7 +26,7 @@ public class MiniGame
      */
     public void diceGame ()
     {
-        JOptionPane.showMessageDialog(null,"Bienvenue dans le jeu de dés !");
+        JOptionPane.showMessageDialog(null,"Welcome to the dice game !");
         
         int player1Roll = rollDice();
         int player2Roll = rollDice();
