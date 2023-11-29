@@ -31,4 +31,5 @@ public class CheshireCat extends Character
         // Insérez votre code ici
         
     }
+    
 }
