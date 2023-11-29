@@ -29,7 +29,11 @@ public class Character
     }
     
     public void setName(String name) {
-        this.name = name;
+        if (name != null && !name.trim().isEmpty()) {
+            this.name = name.trim(); // Trim leading and trailing whitespaces
+        } else {
+            throw new IllegalArgumentException("Name cannot be null or empty.");
+        }
     }
     
     public String getDescription() {
@@ -37,7 +41,11 @@ public class Character
     }
     
     public void setDescription(String description) {
-        this.description = description;
+        if (description != null && !description.trim().isEmpty()) {
+            this.description = description.trim(); // Trim leading and trailing whitespaces
+        } else {
+            throw new IllegalArgumentException("Description cannot be null or empty.");
+        }
     }
 
     // Méthode pour afficher un dialogue
