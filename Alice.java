@@ -10,7 +10,8 @@ import javax.swing.JOptionPane;
 public class Alice extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre/**
-    List<Object> inventory = new ArrayList<>();
+    List<Item> inventory = new ArrayList<>();
+    private static  Room room; 
     private int hunger;
     private boolean death = false ;
     private Room currentRoom ;
@@ -20,6 +21,51 @@ public class Alice extends Character
         // initialisation des variables d'instance
         super("Alice", "Hello, I am Alice");
         
+    }
+    
+    public static  void setRoom(Room currentRoom)
+    {
+        room=currentRoom;
+    }
+    
+    public static Room getRoom()
+    {
+        return room;
+    }
+    
+    public static void changeRoom(String direction)
+    {
+        Room roomA = getRoom().leaveRoom(direction);
+        if(roomA!=null){
+            setRoom(roomA);
+            getRoom().activeEvent(Game.getEventList());
+        }
+    }
+    
+        public void addItem(Item item)
+    {
+        inventory.add(item);
+    }    
+    
+    public void removeItem(Item item)
+    {
+        if (inventory.contains(item))
+            inventory.remove(item);
+        else
+            System.out.println("There is no such item in the inventory");
+    } 
+    
+        public void displayInventory() 
+    {
+    for (Item i : inventory)
+        {
+            System.out.println(i.getName()); 
+        }
+    }
+    
+    public List<Item> getInventory()
+    {
+        return inventory;   
     }
     
     /**

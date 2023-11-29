@@ -22,8 +22,4 @@ public class AliceInWonderlandGame
     {
     }
     
-    public void goRoom(){
-        {
-        }
-    }
 }
