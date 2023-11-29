@@ -16,7 +16,7 @@ public class Event
     {
     }
 
-    public void handleRoomEvent (Room currentRoom) {
+    public void handleRoomEvent (Alice alice, Room currentRoom) {
         if (currentRoom.getName().equals("Catwalk")) {
             // Lapin parler en fonction de l'avancement du jeu
         } else if (currentRoom.getName().equals("Thumbs war room")) {
