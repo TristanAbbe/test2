@@ -9,14 +9,13 @@ public class CheshireCat extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
-
     /**
      * Constructeur d'objets de classe CheshireCat
      */
     public CheshireCat()
     {
         // initialisation des variables d'instance
-        x = 0;
+        x=0;
     }
 
     /**
