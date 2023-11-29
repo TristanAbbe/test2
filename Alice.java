@@ -39,7 +39,6 @@ public class Alice extends Character
         else 
         {
             currentRoom = nextRoom;
-            
         }
         //elle avance
         hunger=hunger-10;
@@ -60,8 +59,6 @@ public class Alice extends Character
         }
         }
     }
-    
-    
     }
 
     

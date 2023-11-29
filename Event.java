@@ -24,8 +24,20 @@ public class Event
             // Lancer mini-jeu de dès
         } else if (currentRoom.getName().equals("Caterpillar cadle")) {
             // Echanger Doubiprane contre Soie
+            //Chenille chenille = findChenilleInRoom(currentRoom);
+
+            //if (chenille != null && alice.getInventory().contains("Doubiprane")) {
+            //    alice.getInventory().remove("Doubiprane");
+            //    alice.getInventory().add("Silk");
+            //} 
         } else if (currentRoom.getName().equals("Hatmaker's bunker")) {
             // Echanger Soie contre casque
+            //MadHatter madhatter = findMadHatterInRoom(currentRoom);
+
+            //if (madhatter != null && alice.getInventory().contains("Silk")) {
+            //    alice.getInventory().remove("Silk");
+            //    alice.getInventory().add("Helmet");
+            //}
         } else if (currentRoom.getName().equals("Body-card garden")) {
             // Si casque elle peut passer sinon elle meurt
         } else if (currentRoom.getName().equals("Glorious rabbit hole")) {
