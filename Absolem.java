@@ -16,6 +16,7 @@ public class Absolem extends Character
     public Absolem()
     {
         // initialisation des variables d'instance
+        super("Absolem","Hi, I'm Absolem");
         headache=true;
     }
 
