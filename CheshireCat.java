@@ -26,7 +26,7 @@ public class CheshireCat extends Character
      * @return     la somme de x et de y
      */
     @Override
-    void dialogue()
+    public void dialogue()
     {
         // Insérez votre code ici
         

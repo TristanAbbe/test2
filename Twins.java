@@ -25,7 +25,7 @@ public class Twins extends Character
      * @return     la somme de x et de y
      */
     @Override
-    void dialogue()
+    public void dialogue()
     {
         // Insérez votre code ici
         
