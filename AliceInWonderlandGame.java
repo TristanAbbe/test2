@@ -1,4 +1,3 @@
-
 /**
  * Décrivez votre classe Game ici.
  *
