@@ -8,7 +8,7 @@
 public class Absolem extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
+    private boolean headache;
 
     /**
      * Constructeur d'objets de classe Absolem
@@ -16,18 +16,18 @@ public class Absolem extends Character
     public Absolem()
     {
         // initialisation des variables d'instance
-        x=0;
+        headache=true;
     }
 
     /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * This method allows Absolem to ask Alice for a Doubiprane
      */
-    public int sampleMethod(int y)
+    public void Head()
     {
-        // Insérez votre code ici
-        return x + y;
+        //ask for a Doubiprane if he is headache
+        if (headache ==true)
+        System.out.println("As-tu un Doubiprane pour soulager mon mal de tête ?");
+        else 
+        System.out.println("Je suis en pleine forme");
     }
 }
