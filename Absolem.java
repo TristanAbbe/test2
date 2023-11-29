@@ -1,4 +1,4 @@
-
+import javax.swing.JOptionPane;
 /**
  * Décrivez votre classe Absolem ici.
  *
@@ -26,9 +26,10 @@ public class Absolem extends Character
     public void Head()
     {
         //ask for a Doubiprane if he is headache
-        if (headache ==true)
-        //ask for a Doubiprane
-        else 
-        //nothing to say
+         if (headache) {
+            JOptionPane.showMessageDialog(null, "J'ai mal à la tête, j'ai besoin d'un Doubiprane !");
+        } else {
+            JOptionPane.showMessageDialog(null, "Je vais bien, je n'ai pas mal à la tête !");
+        }
     }
 }
