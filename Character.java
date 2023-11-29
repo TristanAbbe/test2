@@ -6,8 +6,6 @@ import javax.swing.JOptionPane;
  * @version (un numéro de version ou une date)
  */
 
-//surcharge : nom, description
-
 public class Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
