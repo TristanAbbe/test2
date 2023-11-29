@@ -1,4 +1,5 @@
-
+import java.util.ArrayList;
+import java.util.List;
 /**
  * Décrivez votre classe Alice ici.
  *
@@ -7,12 +8,9 @@
  */
 public class Alice extends Character
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
-
-    /**
-     * Constructeur d'objets de classe Alice
-     */
+    // variables d'instance - remplacez l'exemple qui suit par le vôtre/**
+    List<Object> Inventary = new ArrayList<>();
+    
     public Alice()
     {
         // initialisation des variables d'instance
