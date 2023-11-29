@@ -19,15 +19,41 @@ public class Alice extends Character
         super("Alice", "Hello, I am Alice");
         
     }
-
+    
     /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
+     * This method allows Alice to move, her hunger level gets closer to 0 when she moves
      */
-    public void move() {
-        
+    public void move() 
+    {
+        if (!death) {
+            //elle avance
+            hunger=hunger-10;
+        if (hunger==0) {
+            death=true;
+        }
+        }
     }
     
-}
+    public void inventory()
+    {
+        //gerer l'inventaire
+    }
+    
+    public void feed()
+    {
+        if (!death) {
+            //browse the list to know if she owns a taco
+            for (int i = 0; i < inventory.size(); i++) {
+            String element = inventory.get(i);
+            JOptionPane.showMessageDialog(null, element);
+        }
+        if () {
+                
+            }
+        }
+    }
+    
+    
+    }
+
+    
