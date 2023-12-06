@@ -1,6 +1,6 @@
 
 /**
- * Décrivez votre classe GUI ici.
+ * This class permits to create a graphical interface using SWING
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)
