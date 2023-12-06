@@ -1,62 +1,67 @@
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import java.awt.Dimension;
-import java.awt.GridLayout;
-import java.awt.BorderLayout;
-
-public class GUI extends JFrame {
+import javax.swing.*;
+import java.awt.*;
+    
+public class GUI {
 
     public GUI() {
         JFrame frame = new JFrame("Nested Layout Example");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        JPanel mainPanel = new JPanel(new BorderLayout()); 
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        // Main content panel with BorderLayout
+        JPanel mainPanel = new JPanel(new BorderLayout());
+        
+        // Center panel with Grid
+        JPanel centerPanel = new JPanel(new GridLayout (1,3));
+        JPanel centerLeftPanel = new JPanel(new GridLayout (2,1));
+        centerLeftPanel.add (new JTextField("description1"));
+        centerLeftPanel.add (new JTextField("description2"));
+        centerPanel.add(centerLeftPanel);
+        
+        // Créer une instance de JLabel avec une ImageIcon
+        ImageIcon imageIcon = new ImageIcon("C:/Users/TRIST/Pictures/screenshots/faitpeur.png"); 
+        JLabel imageLabel = new JLabel(imageIcon);
+        centerPanel.add(new JLabel(imageIcon));
         
         
-        JPanel southPanel = new JPanel(new GridLayout(1, 4));
-        JPanel southWestpanel = new JPanel(new GridLayout(3, 3));
+        JPanel centerRightPanel = new JPanel();
+        centerRightPanel.add(new JTextField("inventaire"));
+        centerPanel.add(centerRightPanel);
         
-        // Create empty buttons for layout
+        mainPanel.add(centerPanel, BorderLayout.CENTER);
+        // South panel
+        JPanel southPanel = new JPanel(new FlowLayout());
+        JPanel southWestPanel = new JPanel(new GridLayout (3,3));
+        
         JButton emptyButton1 = new JButton();
         JButton emptyButton2 = new JButton();
         JButton emptyButton3 = new JButton();
         JButton emptyButton4 = new JButton();
         JButton emptyButton5 = new JButton();
-        
+
         // Create movement buttons
-        JButton upButton = new JButton("Up");
-        JButton downButton = new JButton("Down");
-        JButton leftButton = new JButton("Left");
-        JButton rightButton = new JButton("Right");
-        
-        //create Action Button
-        JButton openInventory = new JButton("Inventory");
-        JButton talk = new JButton("Parler");        
-        
-        
-        southWestpanel.add(emptyButton1);
-        southWestpanel.add(leftButton);
-        southWestpanel.add(emptyButton2);
-        southWestpanel.add(upButton);
-        southWestpanel.add(emptyButton3);
-        southWestpanel.add(downButton);
-        southWestpanel.add(emptyButton4);
-        southWestpanel.add(rightButton);
-        southWestpanel.add(emptyButton5);
-        
-        
-        southPanel.add(southWestpanel);
-        southPanel.add(openInventory);
-        southPanel.add(talk);
-        
+        southWestPanel.add(emptyButton1);
+        southWestPanel.add(new JButton("Left"));
+        southWestPanel.add(emptyButton2);
+        southWestPanel.add(new JButton("Up"));
+        southWestPanel.add(emptyButton3);
+        southWestPanel.add(new JButton("Down"));
+        southWestPanel.add(emptyButton4);
+        southWestPanel.add(new JButton("Right"));
+        southWestPanel.add(emptyButton5);
+        southPanel.add(southWestPanel);
+        // Create actions buttons
+        southPanel.add(new JButton("Action"));
+        southPanel.add(new JButton("Parler"));
+    
         mainPanel.add(southPanel, BorderLayout.SOUTH);
-        
-        pack();
-        setLocationRelativeTo(null); // Center the frame
-        setVisible(true);
+
+        frame.getContentPane().add(mainPanel);
+        frame.setSize(600, 600);
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
     }
     
-    public void affichebutton(){
+        public void affichebutton(){
         
     }
     
