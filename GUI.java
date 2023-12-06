@@ -5,9 +5,9 @@ import java.awt.Dimension;
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 
-public class CustomSizedMovementButtonsExample extends JFrame {
+public class GUI extends JFrame {
 
-    public CustomSizedMovementButtonsExample() {
+    public GUI() {
         JFrame frame = new JFrame("Nested Layout Example");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JPanel mainPanel = new JPanel(new BorderLayout()); 
@@ -79,7 +79,7 @@ public class CustomSizedMovementButtonsExample extends JFrame {
     public static void main() {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new CustomSizedMovementButtonsExample();
+                new GUI();
             }
         });
     }
