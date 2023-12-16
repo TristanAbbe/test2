@@ -11,6 +11,7 @@ import javax.swing.*;
  */
 public class AliceInWonderlandGame
 {   private static Room currentRoom;
+    private static ArrayList<Room> listRoom;
     private static ArrayList<Item> listItem;
     private static ArrayList<Event> event;
     private static ArrayList<Character> character;
