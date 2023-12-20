@@ -16,14 +16,16 @@ public class AliceInWonderlandGame
     private static ArrayList<Event> event;
     private static ArrayList<Character> character;
     private boolean death=false ;
+    private HashMap<String, Room> roomsMap;
     /**
      * Constructeur d'objets de classe Game
      */
     public AliceInWonderlandGame()
     {
+        initMap();
     }
     public void initMap(){
-    
+        roomsMap = new HashMap<>();
         
         Room humid_hut = new Room("A small, scary and dark dirthole","Humid Hut");
         Room catwalk = new Room("A place with cat hair everywhere. A cat basket in the corner of the room with a bowl in the shape of a cat's head next"
@@ -72,5 +74,75 @@ public class AliceInWonderlandGame
         Room heart_queen_arena = new Room("I better understand why these body cards were guarding the door: there is a gigantic throne. Next to it, a gold"
         +" table with 2 dice placed on it. On the other side, a bar with piles of bottles as well as a small one which stands out due to its very strange"
         +" appearance. A powerful and very important person must live here, surely a king...", "Queen of Hearts' Arena");
+        
+        humid_hut.setExit("South", catwalk);
+        
+        catwalk.setExit("South", no_rest_forest);
+        catwalk.setExit("West", sage_passage);
+        catwalk.setExit("East", despair_alley);
+        catwalk.setExit("North", humid_hut);
+        
+        sage_passage.setExit("East", catwalk);
+        sage_passage.setExit("West", blowhard_courtyard);
+        
+        blowhard_courtyard.setExit("South", beaver_river);
+        blowhard_courtyard.setExit("West", hatmakers_bunker);
+        blowhard_courtyard.setExit("East", sage_passage);
+        blowhard_courtyard.setExit("North", joyless_toilets);
+        
+        joyless_toilets.setExit("South", blowhard_courtyard);
+        
+        hatmakers_bunker.setExit("East", blowhard_courtyard);
+        
+        beaver_river.setExit("North", blowhard_courtyard);
+        beaver_river.setExit("West", weeping_swamp);
+        
+        weeping_swamp.setExit("East", beaver_river);
+        weeping_swamp.setExit("West", dumbyard);
+        weeping_swamp.setExit("South", bunny_lobby);
+        
+        bunny_lobby.setExit("North", weeping_swamp);
+        bunny_lobby.setExit("West", glorious_rabbit_hole);
+        
+        glorious_rabbit_hole.setExit("East", bunny_lobby);
+        
+        dumbyard.setExit("East", weeping_swamp);
+        
+        no_rest_forest.setExit("North", catwalk);
+        no_rest_forest.setExit("West", twins_bin_den);
+        no_rest_forest.setExit("South", menace_palace);
+        
+        twins_bin_den.setExit("East", no_rest_forest);
+        
+        menace_palace.setExit("North", no_rest_forest);
+        menace_palace.setExit("West", lowland_woodland);
+        menace_palace.setExit("East", body_card_garden);
+        
+        lowland_woodland.setExit("East", menace_palace);
+        
+        body_card_garden.setExit("East", heart_queen_arena);
+        body_card_garden.setExit("West", menace_palace);
+        
+        heart_queen_arena.setExit("West", body_card_garden);
+        
+        despair_alley.setExit("West", catwalk);
+        despair_alley.setExit("North", ware_square);
+        despair_alley.setExit("South", sweating_room);
+        
+        ware_square.setExit("South", despair_alley);
+        ware_square.setExit("East", fancy_pharmacy);
+        
+        fancy_pharmacy.setExit("West", ware_square);
+        
+        sweating_room.setExit("East", smokey_lobby);
+        sweating_room.setExit("North", despair_alley);
+        
+        smokey_lobby.setExit("West", sweating_room);
+        smokey_lobby.setExit("East", caterpillar_craddle);
+        
+        caterpillar_craddle.setExit("West", smokey_lobby);
+        
+        
+        
     }
 }
