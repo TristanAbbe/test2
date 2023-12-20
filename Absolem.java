@@ -23,13 +23,28 @@ public class Absolem extends Character
     /**
      * This method allows Absolem to ask Alice for a Doubiprane
      */
-    public void Head()
-    {
-        //ask for a Doubiprane if he is headache
-         if (headache) {
-            JOptionPane.showMessageDialog(null, "I am headache, I need a Doubiprane !");
-        } else {
-            JOptionPane.showMessageDialog(null, "I am good, I am not headache");
+    // Override the dialogue method for the Caterpillar
+    @Override
+    public void dialogue() {
+        String message;
+
+        // Different dialogues based on the state
+        switch (getState()) {
+            case 1:
+                message = "I have a headache, I need a Doubiprane.";
+                break;
+            case 2:
+                message = "I am good, I don't have a headache anymore.";
+                break;
+            case 3:
+                message = "I hope this string will help you.";
+                break;
+            default:
+                message = "I am the Caterpillar. Welcome to Wonderland!";
+                break;
         }
+
+        JOptionPane.showMessageDialog(null, message);
     }
+
 }

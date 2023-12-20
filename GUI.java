@@ -61,7 +61,7 @@ public class GUI {
         frame.setVisible(true);
     }
     
-        public void affichebutton(){
+    public void affichebutton(){
         
     }
     

@@ -11,6 +11,7 @@ public class Character
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private String name;
     private String description;
+    private int state;
     
     /**
      * Constructeur d'objets de classe Character
@@ -45,8 +46,17 @@ public class Character
             throw new IllegalArgumentException("Description cannot be null or empty.");
         }
     }
+    
+        public int getState() {
+        return state;
+    }
 
+    public void setState(int state) {
+        this.state = state;
+    }
+    
     // Méthode pour afficher un dialogue
     public void dialogue() {
     }
+    
 }
