@@ -22,6 +22,8 @@ public class AliceInWonderlandGame
     {
     }
     public void initMap(){
+    
+        
         Room humid_hut = new Room("A small, scary and dark dirthole","Humid Hut");
         Room catwalk = new Room("A place with cat hair everywhere. A cat basket in the corner of the room with a bowl in the shape of a cat's head next"
         +" to it. There must surely be a cat here. There is also a litter on a mushroom, hence the room's smell...", "Catwalk");
