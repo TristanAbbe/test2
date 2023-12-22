@@ -24,6 +24,7 @@ public class AliceInWonderlandGame
     {
         initMap();
     }
+    
     public void initMap(){
         roomsMap = new HashMap<>();
         
