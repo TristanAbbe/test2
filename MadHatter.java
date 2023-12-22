@@ -19,7 +19,12 @@ public class MadHatter extends Character
     @Override
     public void receiveItem(Item item)
     {
-        
+        if (item.getName() == "Silk Thread")
+        {
+            setItemQuest(true);
     }
+    }
+    
+    
     
 }

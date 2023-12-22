@@ -22,11 +22,21 @@ public class Absolem extends Character
     @Override
     public void receiveItem(Item item)
     {
-        if (item.getName() == "Doubiprane")
+    if (item.getName() == "Doubiprane")
         {
             setItemQuest(true);
             headache = false;
     }
+    }
+    
+    @Override
+    public void giveItem(Character receiver, Item item) {
+        if (getItemQuest()==true) {
+            Item givenItem = item;
+            givenItem.setName("Silk Thread");
+            receiver.setName("Alice");
+            receiver.receiveItem(givenItem);
+        }
     }
 
     /**

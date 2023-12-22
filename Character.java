@@ -58,7 +58,7 @@ public class Character
         }
     }
     
-        public int getState() {
+    public int getState() {
         return state;
     }
 
@@ -67,6 +67,11 @@ public class Character
     }
     
     public void receiveItem (Item item)
+    {
+        
+    }
+    
+    public void giveItem(Character receiver, Item item)
     {
         
     }

@@ -74,6 +74,7 @@ public class Alice extends Character
         System.out.println("you receive an item : " + item.getName());
     }
 
+    @Override
     public void giveItem(Character receiver, Item item) {
         if (inventory != null && !inventory.isEmpty()) {
             removeItem(item);
