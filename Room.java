@@ -26,6 +26,7 @@ public class Room {
     {
         setName(name);
         setDescription(description);
+        
         exits = new HashMap<>();
     }
 
