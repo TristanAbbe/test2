@@ -10,6 +10,7 @@ public class Catwalk extends Room
     /**
      * Constructeur d'objets de classe Catwalk
      */
+    private CheshireCat Chat;
     public Catwalk()
     {
        super ("A place with cat hair everywhere. A cat basket in the corner of the room with a bowl in the shape of a cat's head next"
