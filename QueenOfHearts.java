@@ -20,6 +20,12 @@ public class QueenOfHearts extends Character
         super("Queen of Hearts","Respect me I am the Queen of Hearts");
     }
 
+    @Override
+    public void receiveItem(Item item)
+    {
+        
+    }
+    
     /**
      * Un exemple de méthode - remplacez ce commentaire par le vôtre
      *

@@ -37,6 +37,15 @@ public class Character
         }
     }
     
+    public boolean getItemQuest(){
+        return itemQuest;
+    }
+    
+    public void setItemQuest(boolean ItemQuest)
+    {
+        this.itemQuest=itemQuest;
+    }
+    
     public String getDescription() {
         return description;
     }
