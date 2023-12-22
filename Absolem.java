@@ -9,7 +9,6 @@ public class Absolem extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private boolean headache;
-
     /**
      * Constructeur d'objets de classe Absolem
      */
