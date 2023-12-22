@@ -19,6 +19,16 @@ public class Absolem extends Character
         headache=true;
     }
 
+    @Override
+    public void receiveItem(Item item)
+    {
+        if (item.getName() == "Doubiprane")
+        {
+            setItemQuest(true);
+            headache = false;
+    }
+    }
+
     /**
      * This method allows Absolem to ask Alice for a Doubiprane
      */

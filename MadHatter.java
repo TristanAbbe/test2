@@ -16,5 +16,10 @@ public class MadHatter extends Character
         super("MadHatter","Hello my dear you are in front of the Mad Hatter!");
     }
     
+    @Override
+    public void receiveItem(Item item)
+    {
+        
+    }
     
 }

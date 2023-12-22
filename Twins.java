@@ -18,6 +18,12 @@ public class Twins extends Character
         super("Twins TweedleDee and TweedleDum", "Hi ! We are the twins TweedleDee and TweedleDum"); ;
     }
 
+    @Override
+    public void receiveItem(Item item)
+    {
+        
+    }
+    
     /**
      * Un exemple de méthode - remplacez ce commentaire par le vôtre
      *
