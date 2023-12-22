@@ -42,6 +42,7 @@ public class MiniGame
      *2 rounds, 1 for each twins, Alice wins if she beats both twins 
      */
     public void thumbWar() {
+        boolean aliceWonTwins = false;
         int manchesAlice = 0;
         int manchesTwins = 0;
         for (int i = 0; i < 2; i++) {
@@ -55,6 +56,7 @@ public class MiniGame
 
         if (manchesAlice >= 2) {
             System.out.println("Alice won with " + manchesAlice + " rounds !");
+            aliceWonTwins = true;
         } else {
             System.out.println("Twins won with " + manchesTwins + " rounds !");
         }
@@ -69,8 +71,3 @@ public class MiniGame
         }
     }
 }
-    
-
-
-
-
