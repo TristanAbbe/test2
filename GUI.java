@@ -1,5 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 public class GUI {
@@ -8,7 +10,7 @@ public class GUI {
     private Room currentRoomG;
     private JTextArea dialogueTextArea;
     private Alice alice; 
-    
+    private Item item ;
     public GUI() {
         JFrame frame = new JFrame("Nested Layout Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -19,13 +21,20 @@ public class GUI {
         // Center panel with Grid
         JPanel centerPanel = new JPanel(new GridLayout (1,3));
         JPanel centerLeftPanel = new JPanel(new GridLayout (2,1));
-        
+        JPanel centerRightPanel = new JPanel();
+
         JTextArea descriptionArea = new JTextArea();
-        descriptionArea.setText(afficheDescriptionSalle());
+        descriptionArea.setText("test");// a remplacer par afficheDescriptionSalle()
         descriptionArea.setEditable(false);
         centerLeftPanel.add(descriptionArea);
         
         centerPanel.add(centerLeftPanel);
+        
+        
+        JTextArea inventaireArea = new JTextArea();
+        inventaireArea.setText("inventaire");// a remplacer par afficheDescriptionSalle()
+        inventaireArea.setEditable(false);
+        centerRightPanel.add(inventaireArea);
         
         // Créer une instance de JLabel avec une ImageIcon
         ImageIcon imageIcon = new ImageIcon("C:/Users/TRIST/Pictures/screenshots/faitpeur.png"); 
@@ -33,10 +42,18 @@ public class GUI {
         centerPanel.add(new JLabel(imageIcon));
         
         
-        JPanel centerRightPanel = new JPanel();
-        centerRightPanel.add(new JTextField("inventaire"));
+        ImageIcon imageInv = new ImageIcon("C:/Users/TRIST/Pictures/screenshots/faitpeur.png");
+        Image resizedImage = imageInv.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(resizedImage);
+        JLabel imageLabelInv = new JLabel(resizedIcon);
+        
+        centerRightPanel.add(new JLabel(resizedIcon));
+        //code final = centerRightPanel.add(afficheInventaire());
         
         centerPanel.add(centerRightPanel);
+        
+        
+        
         
         mainPanel.add(centerPanel, BorderLayout.CENTER);
         // South panel
@@ -65,7 +82,7 @@ public class GUI {
         southWestPanel.add(moveRightButton);
         southWestPanel.add(emptyButton5);
         southPanel.add(southWestPanel);
-                // Add ActionListener to the movement buttons
+        // Add ActionListener to the movement buttons
         moveLeftButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -96,6 +113,14 @@ public class GUI {
         
         // Create actions buttons
         JButton actionButton = new JButton("Action");
+        actionButton.addActionListener(new ActionListener()
+        {
+           @Override
+           public void actionPerformed(ActionEvent e){
+               action();
+           }
+        });
+        
         JButton parlerButton = new JButton("Parler");
         parlerButton.addActionListener(new ActionListener() 
         {
@@ -139,17 +164,34 @@ public class GUI {
         alice.move(direction);
     }
     
-    public void affichebutton(){
-        
-    }
-    
     public String afficheDescriptionSalle() {
     Room currentRoomG = game.getCurrentRoom();
     return currentRoomG.getDescription();
     }
     
-    public void afficheInventaire(){
-        
+    public JPanel afficheInventaire() {
+        List<Item> inventory = alice.getInventory();
+            // Create a panel to hold the inventory icons
+        JPanel inventoryPanel = new JPanel();
+
+        // Set the layout to a horizontal flow layout
+        inventoryPanel.setLayout(new FlowLayout());
+
+            for (Item item : inventory) {
+        // Get the icon path for the current item
+        String iconPath = item.getIconPath();
+
+        // Create an ImageIcon using the icon path
+        ImageIcon itemIcon = new ImageIcon(iconPath);
+
+        // Create a label with the item's icon
+        JLabel itemLabel = new JLabel(itemIcon);
+
+        // Add the label to the inventory panel
+        inventoryPanel.add(itemLabel);
+        }
+
+        return inventoryPanel;
     }
     
     public void action(){
