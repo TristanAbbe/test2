@@ -55,7 +55,7 @@ public class Alice extends Character
             System.out.println("There is no such item in the inventory");
     } 
     
-        public void displayInventory() 
+    public void displayInventory() 
     {
     for (Item i : inventory)
         {
