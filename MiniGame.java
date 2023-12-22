@@ -44,7 +44,7 @@ public class MiniGame
     public void thumbWar() {
         int manchesAlice = 0;
         int manchesTwins = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             String gagnant = jouerPileOuFace();
             if (gagnant.equals("Alice")) {
                 manchesAlice++;
@@ -54,9 +54,9 @@ public class MiniGame
         }
 
         if (manchesAlice >= 2) {
-            System.out.println("Alice a gagné avec " + manchesAlice + " manches !");
+            System.out.println("Alice won with " + manchesAlice + " rounds !");
         } else {
-            System.out.println("Les Twins ont gagné avec " + manchesTwins + " manches !");
+            System.out.println("Twins won with " + manchesTwins + " rounds !");
         }
     }
     public String jouerPileOuFace() {
