@@ -68,6 +68,31 @@ public class Alice extends Character
         return inventory;   
     }
     
+    //public void giveItem()
+    //{
+        //if (){
+            
+        //}
+        //removeItem(item);
+    //}
+
+    
+    public void receiveItem(Item item) {
+        addItem(item);
+        System.out.println("you receive an item : " + item.getName());
+    }
+
+    public void giveItem(Character receiver, Item item) {
+        if (inventory != null && !inventory.isEmpty()) {
+            removeItem(item);
+            Item givenItem = item;
+            System.out.println("you give " + givenItem.getName() + " to " + receiver.getName());//à changer dans le GUI
+            receiver.receiveItem(givenItem);
+        } else {
+            System.out.println("your inventory is empty");//à changer dans le GUI
+        }
+    }
+    
     /**
      * This method allows Alice to move, her hunger level gets closer to 0 when she moves
      */
@@ -95,10 +120,10 @@ public class Alice extends Character
             }
         }
     
-    public void feed()
+    public void feed()//methode qui s'apparente à un compteur
     {
         if (!death) {
-            //browse the list to know if she owns a taco
+            //browse the list to know if she owns a specific item
             for (int i = 0; i < inventory.size(); i++) {
             Object element = inventory.get(i);
             JOptionPane.showMessageDialog(null, element);
