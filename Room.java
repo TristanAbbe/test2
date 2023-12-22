@@ -75,6 +75,14 @@ public class Room {
         
     // }
     
+    public void setCharacter(Character character) {
+        this.character = character;
+    }
+
+    public Character getCharacter() {
+        return character;
+    }
+    
     /**
      * Get the neighboring room in the given direction.
      * @param direction The exit's direction.
