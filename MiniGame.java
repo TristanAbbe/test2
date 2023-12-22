@@ -39,7 +39,7 @@ public class MiniGame
 
     /**
      *ThumbWar : Alice and the twins play together
-     * 3 manches, Alice gagne si elle remporte au moins 2 manches 
+     *2 rounds, 1 for each twins, Alice wins if she beats both twins 
      */
     public void thumbWar() {
         int manchesAlice = 0;
