@@ -25,6 +25,14 @@ public class MadHatter extends Character
     }
     }
     
-    
+    @Override
+    public void giveItem(Character receiver, Item item) {
+        if (getItemQuest()==true) {
+            Item givenItem = item;
+            givenItem.setName("Helmet");
+            receiver.setName("Alice");
+            receiver.receiveItem(givenItem);
+        }
+    }
     
 }

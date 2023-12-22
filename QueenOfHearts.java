@@ -26,6 +26,7 @@ public class QueenOfHearts extends Character
         
     }
     
+    
     /**
      * Un exemple de méthode - remplacez ce commentaire par le vôtre
      *
