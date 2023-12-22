@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Décrivez votre classe HeartQueenArena ici.
  *
@@ -7,8 +7,8 @@
  */
 public class Heart_queen_arena extends Room
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-
+    private QueenOfHearts queen;
+    private List<Character> charactersList = new ArrayList<>();
     /**
      * Constructeur d'objets de classe HeartQueenArea
      */
@@ -19,5 +19,10 @@ public class Heart_queen_arena extends Room
         +" table with 2 dice placed on it. On the other side, a bar with piles of bottles as well as a small one which stands out due to its very strange"
         +" appearance. A powerful and very important person must live here, surely a king...", "Queen of Hearts' Arena");
     }
-
+    
+    public void ajouterPersonnage()
+    {
+        queen = new QueenOfHearts();
+        charactersList.add(queen);
+    }
 }
