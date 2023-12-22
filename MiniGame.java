@@ -9,13 +9,17 @@ import javax.swing.JOptionPane;
 public class MiniGame
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-
+    boolean aliceWonTwins = false;
     /**
      * Constructeur d'objets de classe MiniGame
      */
     public MiniGame()
     {
         
+    }
+    
+    public boolean getAliceWonTwins(){
+        return aliceWonTwins;
     }
     
     /**
@@ -42,7 +46,6 @@ public class MiniGame
      *2 rounds, 1 for each twins, Alice wins if she beats both twins 
      */
     public void thumbWar() {
-        boolean aliceWonTwins = false;
         int manchesAlice = 0;
         int manchesTwins = 0;
         for (int i = 0; i < 2; i++) {

@@ -26,7 +26,7 @@ public class Twins extends Character
     
     @Override
     public void giveItem(Character receiver, Item item) {
-        if (getItemQuest()==true) {//à changer ici car ils donnent un taco seulement si Alice gagne le jeu
+        if (MiniGame.getAliceWonTwins()==true) {
             Item givenItem = item;
             givenItem.setName("Taco");
             receiver.setName("Alice");
