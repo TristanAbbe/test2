@@ -1,22 +1,24 @@
 
 /**
- * Décrivez votre classe Grasnolax ici.
+ * Décrivez votre classe Body_card_garden ici.
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Grasnolax extends Item
+public class Body_card_garden extends Room
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
 
     /**
-     * Constructeur d'objets de classe Grasnolax
+     * Constructeur d'objets de classe Body_card_garden
      */
-    public Grasnolax()
+    public Body_card_garden()
     {
         // initialisation des variables d'instance
-        super("Grasnolax","A large cookie made from a delicious mixture of oilseeds (almonds, hazelnuts, walnuts, cashew nuts) and possibly oats and honey, which give it its fattening powers. However, it is very high in calories: no more than one at a time.");
+        super("A large door adorned with precious stones stands at the end of this immense room. There seem to be cards with"
+        +" arms and legs with little pointy helmets standing in front of the door. It looks like they're keeping it. Better to be discreet with them, they look dangerous.", 
+        "Body-Card Garden");
     }
 
     /**
@@ -30,5 +32,4 @@ public class Grasnolax extends Item
         // Insérez votre code ici
         return x + y;
     }
-    
 }

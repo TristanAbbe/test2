@@ -1,22 +1,24 @@
 
 /**
- * Décrivez votre classe Grasnolax ici.
+ * Décrivez votre classe Sweating_room ici.
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Grasnolax extends Item
+public class Sweating_room extends Room
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
 
     /**
-     * Constructeur d'objets de classe Grasnolax
+     * Constructeur d'objets de classe Sweating_room
      */
-    public Grasnolax()
+    public Sweating_room()
     {
         // initialisation des variables d'instance
-        super("Grasnolax","A large cookie made from a delicious mixture of oilseeds (almonds, hazelnuts, walnuts, cashew nuts) and possibly oats and honey, which give it its fattening powers. However, it is very high in calories: no more than one at a time.");
+        super("An entrance hall with sofas, armchairs and a well-stocked fridge. There even are beds. People must come here to"
+        +" relax. On the other hand, the atmosphere is really heavy and hot there with all this fog but it seems to be a very particular kind of smoke, very good-smelling.", 
+        "Sweating Room");
     }
 
     /**
@@ -30,5 +32,4 @@ public class Grasnolax extends Item
         // Insérez votre code ici
         return x + y;
     }
-    
 }

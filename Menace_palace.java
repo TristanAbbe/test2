@@ -1,22 +1,23 @@
 
 /**
- * Décrivez votre classe Grasnolax ici.
+ * Décrivez votre classe Menace_palace ici.
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Grasnolax extends Item
+public class Menace_palace extends Room
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
 
     /**
-     * Constructeur d'objets de classe Grasnolax
+     * Constructeur d'objets de classe Menace_palace
      */
-    public Grasnolax()
+    public Menace_palace()
     {
         // initialisation des variables d'instance
-        super("Grasnolax","A large cookie made from a delicious mixture of oilseeds (almonds, hazelnuts, walnuts, cashew nuts) and possibly oats and honey, which give it its fattening powers. However, it is very high in calories: no more than one at a time.");
+        super("This is the entrance to a huge, menacing house of cards! The design of this castle must have been very laborious.", 
+        "Menace Palace");
     }
 
     /**
@@ -30,5 +31,4 @@ public class Grasnolax extends Item
         // Insérez votre code ici
         return x + y;
     }
-    
 }

@@ -1,22 +1,22 @@
 
 /**
- * Décrivez votre classe Grasnolax ici.
+ * Décrivez votre classe Lowland_woodland ici.
  *
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Grasnolax extends Item
+public class Lowland_woodland extends Room
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
 
     /**
-     * Constructeur d'objets de classe Grasnolax
+     * Constructeur d'objets de classe Lowland_woodland
      */
-    public Grasnolax()
+    public Lowland_woodland()
     {
         // initialisation des variables d'instance
-        super("Grasnolax","A large cookie made from a delicious mixture of oilseeds (almonds, hazelnuts, walnuts, cashew nuts) and possibly oats and honey, which give it its fattening powers. However, it is very high in calories: no more than one at a time.");
+        super("Plains as far as the eye can see. I don't want to get lost...","Lowland Woodland");
     }
 
     /**
@@ -30,5 +30,4 @@ public class Grasnolax extends Item
         // Insérez votre code ici
         return x + y;
     }
-    
 }
