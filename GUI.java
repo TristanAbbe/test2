@@ -7,6 +7,8 @@ public class GUI {
     private Character character;
     private Room currentRoomG;
     private JTextArea dialogueTextArea;
+    private Alice alice; 
+    
     public GUI() {
         JFrame frame = new JFrame("Nested Layout Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -17,8 +19,12 @@ public class GUI {
         // Center panel with Grid
         JPanel centerPanel = new JPanel(new GridLayout (1,3));
         JPanel centerLeftPanel = new JPanel(new GridLayout (2,1));
-        centerLeftPanel.add (new JTextField("description1"));
-        centerLeftPanel.add (new JTextField("description2"));
+        
+        JTextArea descriptionArea = new JTextArea();
+        descriptionArea.setText(afficheDescriptionSalle());
+        descriptionArea.setEditable(false);
+        centerLeftPanel.add(descriptionArea);
+        
         centerPanel.add(centerLeftPanel);
         
         // Créer une instance de JLabel avec une ImageIcon
@@ -43,18 +49,51 @@ public class GUI {
         JButton emptyButton4 = new JButton();
         JButton emptyButton5 = new JButton();
         
+        JButton moveLeftButton = new JButton("Left");
+        JButton moveUpButton = new JButton("Up");
+        JButton moveDownButton = new JButton("Down");
+        JButton moveRightButton = new JButton("Right");
 
         // Create movement buttons
         southWestPanel.add(emptyButton1);
-        southWestPanel.add(new JButton("Left"));
+        southWestPanel.add(moveUpButton);
         southWestPanel.add(emptyButton2);
-        southWestPanel.add(new JButton("Up"));
+        southWestPanel.add(moveLeftButton);
         southWestPanel.add(emptyButton3);
-        southWestPanel.add(new JButton("Down"));
+        southWestPanel.add(moveDownButton);
         southWestPanel.add(emptyButton4);
-        southWestPanel.add(new JButton("Right"));
+        southWestPanel.add(moveRightButton);
         southWestPanel.add(emptyButton5);
         southPanel.add(southWestPanel);
+                // Add ActionListener to the movement buttons
+        moveLeftButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleMove("West");
+            }
+        });
+
+        moveUpButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleMove("North");
+            }
+        });
+
+        moveDownButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleMove("South");
+            }
+        });
+
+        moveRightButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                handleMove("East");
+            }
+        });
+        
         // Create actions buttons
         JButton actionButton = new JButton("Action");
         JButton parlerButton = new JButton("Parler");
@@ -95,21 +134,18 @@ public class GUI {
     private void appendDialogue(String dialogue) {
         dialogueTextArea.append(dialogue + "\n");
     }
-
+    // Method to handle movement based on the button clicked
+    private void handleMove(String direction) {
+        alice.move(direction);
+    }
+    
     public void affichebutton(){
         
     }
     
-    public void afficheDescription(){
-
-        JTextArea descriptionArea = new JTextArea();
-        Room currentRoomG = game.getCurrentRoom();
-        descriptionArea.setText(currentRoomG.getDescription());
-        descriptionArea.setEditable(false);
-
-        JScrollPane scrollPane = new JScrollPane(descriptionArea);
-
-        JOptionPane.showMessageDialog(null, scrollPane, "Room Description - " + currentRoomG.getName(), JOptionPane.PLAIN_MESSAGE);
+    public String afficheDescriptionSalle() {
+    Room currentRoomG = game.getCurrentRoom();
+    return currentRoomG.getDescription();
     }
     
     public void afficheInventaire(){

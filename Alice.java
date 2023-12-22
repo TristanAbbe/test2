@@ -68,33 +68,31 @@ public class Alice extends Character
         return inventory;   
     }
     
-    /**
-     * This method allows Alice to move, her hunger level gets closer to 0 when she moves
-     */
-    public void move(int orientation) 
-    {
-        if (!death) 
-        {
-        String direction = null;//bouton déplacement 
-        Room nextRoom = null;
-        nextRoom = currentRoom.getExit(direction);
+    // Méthode pour le déplacement d'Alice
+    public void move(String direction) {
+        Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
-            System.out.println("There is no room!");
-            }
-        else 
-        {
+            JOptionPane.showMessageDialog(null, "There is no room in that direction!");
+        } else {
             currentRoom = nextRoom;
-        }
-        //elle avance
-        hunger=hunger-10;
-            if (hunger==0) 
-                {
-                death=true;
-                }
+            JOptionPane.showMessageDialog(null, "You have moved to " + currentRoom.getName());
+            //currentRoom.handleEvent();  // Call a method to handle events in the new room if needed
+
+            // Perte de 5 de faim à chaque déplacement
+            hunger -= 5;
+            if (hunger <= 0) {
+                JOptionPane.showMessageDialog(null, "You are too hungry and have died!");
+                // Implémentez ici la logique pour gérer la mort d'Alice
             }
         }
-    
+    }
+        
+    public int getHunger ()
+     {
+         return hunger;
+     }
+     
     public void feed()
     {
         if (!death) {
