@@ -6,6 +6,7 @@ public class GUI {
     private AliceInWonderlandGame game;
     private Character character;
     private Room currentRoomG;
+    private JTextArea dialogueTextArea;
     public GUI() {
         JFrame frame = new JFrame("Nested Layout Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -28,6 +29,7 @@ public class GUI {
         
         JPanel centerRightPanel = new JPanel();
         centerRightPanel.add(new JTextField("inventaire"));
+        
         centerPanel.add(centerRightPanel);
         
         mainPanel.add(centerPanel, BorderLayout.CENTER);
@@ -67,7 +69,9 @@ public class GUI {
         southPanel.add(parlerButton);
         
         JPanel southeastPanel = new JPanel(new BorderLayout());
-        //dialogueTextArea = new JTextArea();
+        dialogueTextArea = new JTextArea();
+        dialogueTextArea.setEditable(false);  // Make it non-editable
+        southeastPanel.add(new JScrollPane(dialogueTextArea), BorderLayout.CENTER);
         mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         frame.getContentPane().add(mainPanel);
@@ -80,13 +84,18 @@ public class GUI {
         // Check if the current room has a character
         if (currentRoomG != null && currentRoomG.getCharacter() != null) {
             // Display the character's dialogue
-            currentRoomG.getCharacter().dialogue();
+            String dialogue = currentRoomG.getCharacter().dialogue();
+            appendDialogue(dialogue);
         } else {
             // Display a generic message if there is no character in the room
-            JOptionPane.showMessageDialog(null, "There is no one to parler with in this room.");
+            appendDialogue("There is no one to parler with in this room.");
         }
     }
-    
+        // Method to append dialogue to the TextArea
+    private void appendDialogue(String dialogue) {
+        dialogueTextArea.append(dialogue + "\n");
+    }
+
     public void affichebutton(){
         
     }
@@ -104,10 +113,6 @@ public class GUI {
     }
     
     public void afficheInventaire(){
-        
-    }
-    
-    public void talk(){
         
     }
     

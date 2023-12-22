@@ -21,7 +21,7 @@ public class CheshireCat extends Character
 
     // Override the dialogue method for the CheshireCat
     @Override
-    public void dialogue() {
+    public String dialogue() {
         String message;
 
         // Different dialogues based on the state
@@ -49,7 +49,7 @@ public class CheshireCat extends Character
                 break;
         }
 
-        JOptionPane.showMessageDialog(null, message);
+        return message;
     }
     
 }

@@ -55,8 +55,9 @@ public class Character
         this.state = state;
     }
     
-    // Méthode pour afficher un dialogue
-    public void dialogue() {
-    }
+    // Méthode pour un dialogue
+    public String dialogue() {
+        return null; 
+        }
     
 }
