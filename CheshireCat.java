@@ -8,8 +8,6 @@ import javax.swing.JOptionPane;
 public class CheshireCat extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    
-    
     /**
      * Constructeur d'objets de classe CheshireCat
      */
