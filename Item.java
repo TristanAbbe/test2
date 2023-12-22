@@ -11,7 +11,7 @@ public class Item
     private String description;
     private boolean stackable; // if true the items is stackable
     private boolean removable; // if true the item can be removable
-
+    private String iconPath;
     /**
      * Constructeur d'objets de classe Item
      */
@@ -35,6 +35,11 @@ public class Item
         } else {
             throw new IllegalArgumentException("Description cannot be null or empty.");
         }
+    }
+    
+    public String getIconPath()
+    {
+        return iconPath;
     }
     
     public String getName(){

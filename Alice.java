@@ -33,15 +33,6 @@ public class Alice extends Character
         return room;
     }
     
-    // public static void changeRoom(String direction)
-    // {
-        // Room roomA = getRoom().leaveRoom(direction);
-        // if(roomA!=null){
-            // setRoom  (roomA);
-            // getRoom().activeEvent(Game.getEventList());
-        // }
-    // }
-    
         public void addItem(Item item)
     {
         inventory.add(item);
