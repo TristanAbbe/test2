@@ -12,6 +12,7 @@ public class Character
     private String name;
     private String description;
     private int state;
+    private boolean itemQuest;
     
     /**
      * Constructeur d'objets de classe Character
@@ -20,6 +21,7 @@ public class Character
     {
         setName(name);
         setDescription(description);
+        itemQuest = false;
     }
 
     // Getters et setters (méthodes d'accès)
@@ -35,6 +37,15 @@ public class Character
         }
     }
     
+    public boolean getItemQuest(){
+        return itemQuest;
+    }
+    
+    public void setItemQuest(boolean ItemQuest)
+    {
+        this.itemQuest=itemQuest;
+    }
+    
     public String getDescription() {
         return description;
     }
@@ -47,12 +58,22 @@ public class Character
         }
     }
     
-        public int getState() {
+    public int getState() {
         return state;
     }
 
     public void setState(int state) {
         this.state = state;
+    }
+    
+    public void receiveItem (Item item)
+    {
+        
+    }
+    
+    public void giveItem(Character receiver, Item item)
+    {
+        
     }
     
     // Méthode pour un dialogue

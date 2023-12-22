@@ -19,7 +19,7 @@ public class Event
         if (currentRoom.getName().equals("Catwalk")) {
             // Rabbit speaks depending on the progress of the game
         } else if (currentRoom.getName().equals("Thumbs war room")) {
-            // Start mini-game thumb war
+            // thumbWar
         } else if (currentRoom.getName().equals("Heart queen arena")) {
             // Roll dice mini-game
         } else if (currentRoom.getName().equals("Caterpillar cadle")) {

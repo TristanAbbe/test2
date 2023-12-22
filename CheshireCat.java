@@ -17,6 +17,12 @@ public class CheshireCat extends Character
         super("Cheshire Cat", "I am the Cheshire Cat : welcome in the game");
     }
 
+    @Override
+    public void receiveItem(Item item)
+    {
+        
+    }
+    
     // Override the dialogue method for the CheshireCat
     @Override
     public String dialogue() {

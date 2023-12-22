@@ -16,5 +16,23 @@ public class MadHatter extends Character
         super("MadHatter","Hello my dear you are in front of the Mad Hatter!");
     }
     
+    @Override
+    public void receiveItem(Item item)
+    {
+        if (item.getName() == "Silk Thread")
+        {
+            setItemQuest(true);
+    }
+    }
+    
+    @Override
+    public void giveItem(Character receiver, Item item) {
+        if (getItemQuest()==true) {
+            Item givenItem = item;
+            givenItem.setName("Helmet");
+            receiver.setName("Alice");
+            receiver.receiveItem(givenItem);
+        }
+    }
     
 }

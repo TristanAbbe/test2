@@ -1,4 +1,4 @@
-
+import java.util.*;
 /**
  * Décrivez votre classe Twins_bin_den ici.
  *
@@ -8,8 +8,8 @@
 public class Twins_bin_den extends Room
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
-
+    private Twins twins;
+    private List<Character> charactersList = new ArrayList<>();
     /**
      * Constructeur d'objets de classe Twins_bin_den
      */
@@ -19,15 +19,9 @@ public class Twins_bin_den extends Room
         super("This place looks dangerous! Better to keep both eyes open...", "Twins' Bin Den");
     }
 
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
-    public int sampleMethod(int y)
+    public void ajouterPersonnage()
     {
-        // Insérez votre code ici
-        return x + y;
+        twins = new Twins();
+        charactersList.add(twins);
     }
 }

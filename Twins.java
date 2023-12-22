@@ -18,6 +18,22 @@ public class Twins extends Character
         super("Twins TweedleDee and TweedleDum", "Hi ! We are the twins TweedleDee and TweedleDum"); ;
     }
 
+    @Override
+    public void receiveItem(Item item)
+    {
+        
+    }
+    
+    @Override
+    public void giveItem(Character receiver, Item item) {
+        if (getItemQuest()==true) {//à changer ici car ils donnent un taco seulement si Alice gagne le jeu
+            Item givenItem = item;
+            givenItem.setName("Taco");
+            receiver.setName("Alice");
+            receiver.receiveItem(givenItem);
+        }
+    }
+    
     /**
      * Un exemple de méthode - remplacez ce commentaire par le vôtre
      *
