@@ -115,8 +115,9 @@ public class GUI {
         
     }
     
-    public void imageRoom(){
-        
+    public String imageRoom(){
+        Room currentRoomG = game.getCurrentRoom();
+        return(currentRoomG.getLienImage());
     }
     
     public static void main() {

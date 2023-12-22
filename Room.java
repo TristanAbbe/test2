@@ -21,12 +21,14 @@ public class Room {
     private int status; // statu 0 (=>pas le dialogue car le joueur n'a pas fais certaines chose), 
     //1 (=>dialogue se fait) 2(=> Alice a terminer sur cette map). Gére quel dialogue on a déclencher.
     private Item item;
+    private String lienImage;
     
-    public Room(String description,String name) 
+    public Room(String description,String name, String lienImage) 
     {
         setName(name);
         setDescription(description);
         exits = new HashMap<>();
+        this.lienImage = lienImage;
     }
 
     /**
@@ -80,6 +82,10 @@ public class Room {
 
     public Character getCharacter() {
         return character;
+    }
+    
+    public String getLienImage(){
+        return lienImage;
     }
     
     /**
