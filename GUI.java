@@ -11,6 +11,7 @@ public class GUI {
     private JTextArea dialogueTextArea;
     private Alice alice; 
     private Item item ;
+    private JProgressBar hungerProgressBar;
     public GUI() {
         JFrame frame = new JFrame("Nested Layout Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -160,8 +161,13 @@ public class GUI {
     // Method to handle movement based on the button clicked
     private void handleMove(String direction) {
         alice.move(direction);
+        updateHungerProgressBar();
     }
-    
+    private void updateHungerProgressBar() {
+        int hunger = alice.getHunger();
+        hungerProgressBar.setValue(hunger);
+        hungerProgressBar.setString("Hunger: " + hunger + "%");
+    }
     public String afficheDescriptionSalle() {
     Room currentRoomG = game.getCurrentRoom();
     return currentRoomG.getDescription();

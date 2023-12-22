@@ -79,24 +79,28 @@ public class Alice extends Character
     
     // Méthode pour le déplacement d'Alice
     public void move(String direction) {
+    if (!death) {
         Room nextRoom = currentRoom.getExit(direction);
 
         if (nextRoom == null) {
-            JOptionPane.showMessageDialog(null, "There is no room in that direction!");
+            System.out.println("There is no room!");
         } else {
             currentRoom = nextRoom;
-            JOptionPane.showMessageDialog(null, "You have moved to " + currentRoom.getName());
-            //currentRoom.handleEvent();  // Call a method to handle events in the new room if needed
+            
+            // Decrease hunger by 5 units for each move
+            decreaseHunger(5);
 
-            // Perte de 5 de faim à chaque déplacement
-            hunger -= 5;
-            if (hunger <= 0) {
-                JOptionPane.showMessageDialog(null, "You are too hungry and have died!");
-                // Implémentez ici la logique pour gérer la mort d'Alice
+            if (hunger == 0) {
+                death = true;
             }
         }
     }
-        
+    }
+    
+    public void decreaseHunger(int amount) {
+    hunger = Math.max(0, hunger - amount);
+    }
+    
     public int getHunger ()
      {
          return hunger;
