@@ -39,12 +39,13 @@ public class MiniGame
 
     /**
      *ThumbWar : Alice and the twins play together
-     * 3 manches, Alice gagne si elle remporte au moins 2 manches 
+     *2 rounds, 1 for each twins, Alice wins if she beats both twins 
      */
     public void thumbWar() {
+        boolean aliceWonTwins = false;
         int manchesAlice = 0;
         int manchesTwins = 0;
-        for (int i = 0; i < 3; i++) {
+        for (int i = 0; i < 2; i++) {
             String gagnant = jouerPileOuFace();
             if (gagnant.equals("Alice")) {
                 manchesAlice++;
@@ -54,9 +55,10 @@ public class MiniGame
         }
 
         if (manchesAlice >= 2) {
-            System.out.println("Alice a gagné avec " + manchesAlice + " manches !");
+            System.out.println("Alice won with " + manchesAlice + " rounds !");
+            aliceWonTwins = true;
         } else {
-            System.out.println("Les Twins ont gagné avec " + manchesTwins + " manches !");
+            System.out.println("Twins won with " + manchesTwins + " rounds !");
         }
     }
     public String jouerPileOuFace() {
@@ -69,8 +71,3 @@ public class MiniGame
         }
     }
 }
-    
-
-
-
-
