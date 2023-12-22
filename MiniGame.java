@@ -39,44 +39,38 @@ public class MiniGame
 
     /**
      *ThumbWar : Alice and the twins play together
-     *
+     * 3 manches, Alice gagne si elle remporte au moins 2 manches 
      */
     public void thumbWar() {
-        JOptionPane.showMessageDialog(null, "Let's play Thumb War: Alice vs. the Twins!");
-        
-        int aliceThumbCount = 5; // Assuming Alice has 5 fingers initially
-        int twinsThumbCount = 5; // Twins also start with 5 fingers
-        
-        Random random = new Random();
-        
-        while (aliceThumbCount > 0 && twinsThumbCount > 0) {
-            JOptionPane.showMessageDialog(null, "Alice has " + aliceThumbCount + " fingers left.");
-            JOptionPane.showMessageDialog(null, "Twins have " + twinsThumbCount + " fingers left.");
-            
-            int aliceThumbPosition = random.nextInt(5); // Alice randomly selects a thumb to use
-            int twinsThumbPosition = random.nextInt(5); // Twins randomly select a thumb to use
-            
-            JOptionPane.showMessageDialog(null, "Alice chooses finger " + (aliceThumbPosition + 1));
-            JOptionPane.showMessageDialog(null, "Twins choose finger " + (twinsThumbPosition + 1));
-            
-            if (aliceThumbPosition == twinsThumbPosition) {
-                JOptionPane.showMessageDialog(null, "It's a tie! Try again.");
-            } else if ((aliceThumbPosition + 1) % 5 == twinsThumbPosition) {
-                JOptionPane.showMessageDialog(null, "Alice wins this round!");
-                twinsThumbCount--;
+        int manchesAlice = 0;
+        int manchesTwins = 0;
+        for (int i = 0; i < 3; i++) {
+            String gagnant = jouerPileOuFace();
+            if (gagnant.equals("Alice")) {
+                manchesAlice++;
             } else {
-                JOptionPane.showMessageDialog(null, "Twins win this round!");
-                aliceThumbCount--;
+                manchesTwins++;
             }
         }
-        
-        if (aliceThumbCount == 0) {
-            JOptionPane.showMessageDialog(null, "Twins win the Thumb War!");
+
+        if (manchesAlice >= 2) {
+            System.out.println("Alice a gagné avec " + manchesAlice + " manches !");
         } else {
-            JOptionPane.showMessageDialog(null, "Alice wins the Thumb War!");
+            System.out.println("Les Twins ont gagné avec " + manchesTwins + " manches !");
+        }
+    }
+    public String jouerPileOuFace() {
+        Random rand = new Random();
+        int resultat = rand.nextInt(2); // Génère 0 ou 1 (0:pile ou 1:face)
+        if (resultat == 0) {
+            return "Alice";
+        } else {
+            return "Twins";
         }
     }
 }
+    
+
 
 
 
