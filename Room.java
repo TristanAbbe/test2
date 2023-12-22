@@ -23,7 +23,7 @@ public class Room {
     private Item item;
     private String lienImage;
     
-    public Room(String description,String name, String lienImage) 
+    public Room(String description,String name) 
     {
         setName(name);
         setDescription(description);
