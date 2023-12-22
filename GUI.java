@@ -119,6 +119,7 @@ public class GUI {
         Room currentRoomG = game.getCurrentRoom();
         return(currentRoomG.getLienImage());
     }
+
     
     public static void main() {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
