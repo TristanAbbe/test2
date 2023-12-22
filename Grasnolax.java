@@ -30,4 +30,5 @@ public class Grasnolax extends Item
         // Insérez votre code ici
         return x + y;
     }
+    
 }

@@ -81,6 +81,10 @@ public class GUI {
         
     }
     
+    public void imageRoom(){
+        
+    }
+    
     public static void main() {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {
             public void run() {
