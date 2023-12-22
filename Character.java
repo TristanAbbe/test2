@@ -12,7 +12,7 @@ public class Character
     private String name;
     private String description;
     private int state;
-    private boolean itemQuest;//à init à false
+    private boolean itemQuest;
     
     /**
      * Constructeur d'objets de classe Character
@@ -57,20 +57,14 @@ public class Character
         this.state = state;
     }
     
-<<<<<<< HEAD
-    public void receiveItem(Item item)
+    public void receiveItem (Item item)
     {
         
     }
     
-    // Méthode pour afficher un dialogue
-    public void dialogue() {
-    }
-=======
     // Méthode pour un dialogue
     public String dialogue() {
         return null; 
         }
->>>>>>> 660d8fcf1f3b3a170c9a96984e288a327aa5d312
     
 }
