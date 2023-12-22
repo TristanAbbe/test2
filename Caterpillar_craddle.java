@@ -1,3 +1,4 @@
+import java.util.*;
 
 /**
  * Décrivez votre classe Caterpillar_craddle ici.
@@ -7,9 +8,8 @@
  */
 public class Caterpillar_craddle extends Room
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private int x;
-
+    private Absolem chenille;
+    private List<Character> charactersList = new ArrayList<>();
     /**
      * Constructeur d'objets de classe Caterpillar_craddle
      */
@@ -21,16 +21,10 @@ public class Caterpillar_craddle extends Room
         +" a small animal. Very light silk threads starting from the ceiling cross the room with in its center a large red mushroom with white spots on"
         +" which is placed a strange character of an unempathetic nature.", "Caterpillar Craddle");
     }
-
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
-    public int sampleMethod(int y)
+    
+    public void ajouterPersonnage()
     {
-        // Insérez votre code ici
-        return x + y;
+        chenille = new Absolem();
+        charactersList.add(chenille);
     }
 }
