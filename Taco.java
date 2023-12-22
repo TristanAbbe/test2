@@ -18,16 +18,4 @@ public class Taco extends Item
         // initialisation des variables d'instance
         super("Taco","A speciality from moustache country, it looks very filling.");
     }
-
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
-    public int sampleMethod(int y)
-    {
-        // Insérez votre code ici
-        return x + y;
-    }
 }

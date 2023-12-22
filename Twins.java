@@ -8,7 +8,10 @@
 public class Twins extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-
+    MiniGame miniGame;
+    Item item;
+    Alice alice;
+    Taco tacos;
     /**
      * Constructeur d'objets de classe Twins
      */
@@ -17,29 +20,22 @@ public class Twins extends Character
         // initialisation des variables d'instance
         super("Twins TweedleDee and TweedleDum", "Hi ! We are the twins TweedleDee and TweedleDum"); ;
     }
-
-    @Override
-    public void receiveItem(Item item)
-    {
+    
+    public void gameTwins(){
+        miniGame.thumbWar(); 
+        if (miniGame.aliceWonTwins){
+            giveItem();
+        }
         
     }
     
-    @Override
-    public void giveItem(Character receiver, Item item) {
-        if (MiniGame.getAliceWonTwins()==true) {
+    public void giveItem() {
             Item givenItem = item;
             givenItem.setName("Taco");
-            receiver.setName("Alice");
-            receiver.receiveItem(givenItem);
+            alice.receiveItem(tacos);
         }
-    }
     
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
+    
     @Override
       public String dialogue()
     {

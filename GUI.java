@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.net.URL;
 public class GUI {
     private AliceInWonderlandGame game;
     private Character character;
@@ -34,7 +35,8 @@ public class GUI {
 
         
         // Créer une instance de JLabel avec une ImageIcon
-        ImageIcon imageIcon = new ImageIcon("C:/Users/TRIST/Pictures/screenshots/faitpeur.png"); 
+        
+        ImageIcon imageIcon = new ImageIcon("Images_Alice/Beaver_river.jpg"); 
         JLabel imageLabel = new JLabel(imageIcon);
         centerPanel.add(new JLabel(imageIcon));
                 
@@ -163,11 +165,13 @@ public class GUI {
         alice.move(direction);
         updateHungerProgressBar();
     }
+    
     private void updateHungerProgressBar() {
         int hunger = alice.getHunger();
         hungerProgressBar.setValue(hunger);
         hungerProgressBar.setString("Hunger: " + hunger + "%");
     }
+    
     public String afficheDescriptionSalle() {
     Room currentRoomG = game.getCurrentRoom();
     return currentRoomG.getDescription();
