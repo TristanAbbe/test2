@@ -21,7 +21,7 @@ public class GUI {
         // Center panel with Grid
         JPanel centerPanel = new JPanel(new GridLayout (1,3));
         JPanel centerLeftPanel = new JPanel(new GridLayout (2,1));
-        JPanel centerRightPanel = new JPanel();
+        JPanel centerRightPanel = new JPanel(new BorderLayout());
 
         JTextArea descriptionArea = new JTextArea();
         descriptionArea.setText("test");// a remplacer par afficheDescriptionSalle()
@@ -30,26 +30,24 @@ public class GUI {
         
         centerPanel.add(centerLeftPanel);
         
-        
-        JTextArea inventaireArea = new JTextArea();
-        inventaireArea.setText("inventaire");// a remplacer par afficheDescriptionSalle()
-        inventaireArea.setEditable(false);
-        centerRightPanel.add(inventaireArea);
+
         
         // Créer une instance de JLabel avec une ImageIcon
         ImageIcon imageIcon = new ImageIcon("C:/Users/TRIST/Pictures/screenshots/faitpeur.png"); 
         JLabel imageLabel = new JLabel(imageIcon);
         centerPanel.add(new JLabel(imageIcon));
+                
         
         
-        ImageIcon imageInv = new ImageIcon("C:/Users/TRIST/Pictures/screenshots/faitpeur.png");
-        Image resizedImage = imageInv.getImage().getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon = new ImageIcon(resizedImage);
-        JLabel imageLabelInv = new JLabel(resizedIcon);
-        
-        centerRightPanel.add(new JLabel(resizedIcon));
-        //code final = centerRightPanel.add(afficheInventaire());
-        
+        // Create inventory label
+        //JLabel inventoryLabel = afficheInventaire();
+        //centerRightPanel.add(inventoryLabel, BorderLayout.NORTH);
+
+        // Create hunger progress bar
+        JProgressBar hungerProgressBar = new JProgressBar(0, 100);
+        hungerProgressBar.setStringPainted(true); // Show percentage text
+        centerRightPanel.add(hungerProgressBar, BorderLayout.SOUTH);
+
         centerPanel.add(centerRightPanel);
         
         
@@ -169,29 +167,29 @@ public class GUI {
     return currentRoomG.getDescription();
     }
     
-    public JPanel afficheInventaire() {
+    public JLabel afficheInventaire() {
         List<Item> inventory = alice.getInventory();
-            // Create a panel to hold the inventory icons
-        JPanel inventoryPanel = new JPanel();
+        // Create a label to hold the inventory icons
+        JLabel inventoryLabel = new JLabel();
 
         // Set the layout to a horizontal flow layout
-        inventoryPanel.setLayout(new FlowLayout());
+        inventoryLabel.setLayout(new FlowLayout());
 
-            for (Item item : inventory) {
-        // Get the icon path for the current item
-        String iconPath = item.getIconPath();
+        for (Item item : inventory) {
+            // Get the icon path for the current item
+            String iconPath = item.getIconPath();
 
-        // Create an ImageIcon using the icon path
-        ImageIcon itemIcon = new ImageIcon(iconPath);
+            // Create an ImageIcon using the icon path
+            ImageIcon itemIcon = new ImageIcon(iconPath);
 
-        // Create a label with the item's icon
-        JLabel itemLabel = new JLabel(itemIcon);
+            // Create a label with the item's icon
+            JLabel itemLabel = new JLabel(itemIcon);
 
-        // Add the label to the inventory panel
-        inventoryPanel.add(itemLabel);
+            // Add the label to the inventory label
+            inventoryLabel.add(itemLabel);
         }
 
-        return inventoryPanel;
+        return inventoryLabel;
     }
     
     public void action(){
