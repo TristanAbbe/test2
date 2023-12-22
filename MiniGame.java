@@ -32,7 +32,7 @@ public class MiniGame
         
     }
     
-        public static int rollDice() {
+    public static int rollDice() {
         Random random = new Random();
         return random.nextInt(6) + 1; // Generates a random number between 1 and 6
     }
