@@ -57,6 +57,7 @@ public class Character
         this.state = state;
     }
     
+<<<<<<< HEAD
     public void receiveItem(Item item)
     {
         
@@ -65,5 +66,11 @@ public class Character
     // Méthode pour afficher un dialogue
     public void dialogue() {
     }
+=======
+    // Méthode pour un dialogue
+    public String dialogue() {
+        return null; 
+        }
+>>>>>>> 660d8fcf1f3b3a170c9a96984e288a327aa5d312
     
 }

@@ -68,6 +68,7 @@ public class Alice extends Character
         return inventory;   
     }
     
+<<<<<<< HEAD
     //public void giveItem()
     //{
         //if (){
@@ -103,24 +104,39 @@ public class Alice extends Character
         String direction = null;//bouton déplacement 
         Room nextRoom = null;
         nextRoom = currentRoom.getExit(direction);
+=======
+    // Méthode pour le déplacement d'Alice
+    public void move(String direction) {
+        Room nextRoom = currentRoom.getExit(direction);
+>>>>>>> 660d8fcf1f3b3a170c9a96984e288a327aa5d312
 
         if (nextRoom == null) {
-            System.out.println("There is no room!");
-            }
-        else 
-        {
+            JOptionPane.showMessageDialog(null, "There is no room in that direction!");
+        } else {
             currentRoom = nextRoom;
-        }
-        //elle avance
-        hunger=hunger-10;
-            if (hunger==0) 
-                {
-                death=true;
-                }
+            JOptionPane.showMessageDialog(null, "You have moved to " + currentRoom.getName());
+            //currentRoom.handleEvent();  // Call a method to handle events in the new room if needed
+
+            // Perte de 5 de faim à chaque déplacement
+            hunger -= 5;
+            if (hunger <= 0) {
+                JOptionPane.showMessageDialog(null, "You are too hungry and have died!");
+                // Implémentez ici la logique pour gérer la mort d'Alice
             }
         }
+<<<<<<< HEAD
     
     public void feed()//methode qui s'apparente à un compteur
+=======
+    }
+        
+    public int getHunger ()
+     {
+         return hunger;
+     }
+     
+    public void feed()
+>>>>>>> 660d8fcf1f3b3a170c9a96984e288a327aa5d312
     {
         if (!death) {
             //browse the list to know if she owns a specific item

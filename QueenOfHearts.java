@@ -27,9 +27,9 @@ public class QueenOfHearts extends Character
      * @return     la somme de x et de y
      */
     @Override
-    public void dialogue()
+      public String dialogue()
     {
-        // Insérez votre code ici
-        
+        String message = "oui";
+        return message;
     }
 }
