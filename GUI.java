@@ -56,7 +56,8 @@ public class GUI {
         // Create actions buttons
         JButton actionButton = new JButton("Action");
         JButton parlerButton = new JButton("Parler");
-        parlerButton.addActionListener(new ActionListener() {
+        parlerButton.addActionListener(new ActionListener() 
+        {
             @Override
             public void actionPerformed(ActionEvent e) {
                 parler(); 
@@ -64,7 +65,9 @@ public class GUI {
         });
         southPanel.add(actionButton);
         southPanel.add(parlerButton);
-    
+        
+        JPanel southeastPanel = new JPanel(new BorderLayout());
+        //dialogueTextArea = new JTextArea();
         mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         frame.getContentPane().add(mainPanel);
@@ -99,7 +102,6 @@ public class GUI {
 
         JOptionPane.showMessageDialog(null, scrollPane, "Room Description - " + currentRoomG.getName(), JOptionPane.PLAIN_MESSAGE);
     }
-    
     
     public void afficheInventaire(){
         

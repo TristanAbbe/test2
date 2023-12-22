@@ -37,7 +37,7 @@ public class Alice extends Character
     // {
         // Room roomA = getRoom().leaveRoom(direction);
         // if(roomA!=null){
-            // setRoom(roomA);
+            // setRoom  (roomA);
             // getRoom().activeEvent(Game.getEventList());
         // }
     // }
