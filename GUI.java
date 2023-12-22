@@ -1,8 +1,11 @@
 import javax.swing.*;
 import java.awt.*;
-    
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 public class GUI {
-
+    private AliceInWonderlandGame game;
+    private Character character;
+    private Room currentRoomG;
     public GUI() {
         JFrame frame = new JFrame("Nested Layout Example");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -37,6 +40,7 @@ public class GUI {
         JButton emptyButton3 = new JButton();
         JButton emptyButton4 = new JButton();
         JButton emptyButton5 = new JButton();
+        
 
         // Create movement buttons
         southWestPanel.add(emptyButton1);
@@ -50,8 +54,16 @@ public class GUI {
         southWestPanel.add(emptyButton5);
         southPanel.add(southWestPanel);
         // Create actions buttons
-        southPanel.add(new JButton("Action"));
-        southPanel.add(new JButton("Parler"));
+        JButton actionButton = new JButton("Action");
+        JButton parlerButton = new JButton("Parler");
+        parlerButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                parler(); 
+            }
+        });
+        southPanel.add(actionButton);
+        southPanel.add(parlerButton);
     
         mainPanel.add(southPanel, BorderLayout.SOUTH);
 
@@ -61,13 +73,33 @@ public class GUI {
         frame.setVisible(true);
     }
     
+    public void parler() {
+        // Check if the current room has a character
+        if (currentRoomG != null && currentRoomG.getCharacter() != null) {
+            // Display the character's dialogue
+            currentRoomG.getCharacter().dialogue();
+        } else {
+            // Display a generic message if there is no character in the room
+            JOptionPane.showMessageDialog(null, "There is no one to parler with in this room.");
+        }
+    }
+    
     public void affichebutton(){
         
     }
     
     public void afficheDescription(){
-        
+
+        JTextArea descriptionArea = new JTextArea();
+        Room currentRoomG = game.getCurrentRoom();
+        descriptionArea.setText(currentRoomG.getDescription());
+        descriptionArea.setEditable(false);
+
+        JScrollPane scrollPane = new JScrollPane(descriptionArea);
+
+        JOptionPane.showMessageDialog(null, scrollPane, "Room Description - " + currentRoomG.getName(), JOptionPane.PLAIN_MESSAGE);
     }
+    
     
     public void afficheInventaire(){
         

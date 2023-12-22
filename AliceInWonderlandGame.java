@@ -146,4 +146,12 @@ public class AliceInWonderlandGame
         
         
     }
+    
+        public Room getCurrentRoom() {
+        return currentRoom;
+    }
+
+        public void setCurrentRoom(Room newRoom) {
+        currentRoom = newRoom;
+    }
 }
