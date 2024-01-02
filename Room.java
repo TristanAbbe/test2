@@ -15,8 +15,8 @@ public class Room {
     private String name;
     private String description;
     private HashMap<String, Room> exits;
-    private int x;
-    private int y;
+    //private int x;
+    //private int y;
     private Character character;
     private int status; // statu 0 (=>pas le dialogue car le joueur n'a pas fais certaines chose), 
     //1 (=>dialogue se fait) 2(=> Alice a terminer sur cette map). Gére quel dialogue on a déclencher.

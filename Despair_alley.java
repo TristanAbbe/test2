@@ -13,5 +13,6 @@ public class Despair_alley extends Room
     public Despair_alley()
     {
        super("There's a sign with the words: 'You who enter here, abandon all hope…'. Charming…", "Despair Alley");
+       //ImagesAlice/Despair_alley.png
     }
 }

@@ -14,5 +14,6 @@ public class Humid_hut extends Room
     {
         // initialisation des variables d'instance
         super ("A small, scary and dark dirthole","Humid Hut");
+        //ImagesAlice/Humid_hut.png
     }
 }

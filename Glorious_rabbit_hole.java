@@ -17,6 +17,7 @@ public class Glorious_rabbit_hole extends Room
     {
         super("A small room whose entrance is a tiny hole, a normal-sized person wouldn't be able to fit in at all!"
         +" Nevertheless, this room is very warm with gorgeous objects such as a tea set and a toilet brush. Someone must be living there.", "Glorious Rabbit Hole");
+        //ImagesAlice/Glorious_rabbit_hole.png
     }
     
     public void ajouterPersonnage(){

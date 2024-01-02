@@ -17,6 +17,7 @@ public class Twins_bin_den extends Room
     {
         // initialisation des variables d'instance
         super("This place looks dangerous! Better to keep both eyes open...", "Twins' Bin Den");
+        //ImagesAlice/TwinsBinDen.png
     }
 
     public void ajouterPersonnage()

@@ -18,6 +18,7 @@ public class No_rest_forest extends Room
         // initialisation des variables d'instance
         super("A big forest with big trees everywhere. There is only one narrow passage to squeeze through. You definitely"
         +" shouldn't stop for a pee break.", "No-Rest Forest");
+        //ImagesAlice/No_rest_forest.png
     }
 
     /**
