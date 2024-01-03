@@ -16,7 +16,9 @@ public class SilkThread extends Item
     public SilkThread()
     {
         // initialisation des variables d'instance
-        super("Silk Thread","Despite its fragility, this surprisingly light gift could well be used to make magnificent garments. If you're good with your fingers and your head, you can do it.");
+        super("Silk Thread",
+        "Despite its fragility, this surprisingly light gift could well be used to make magnificent garments. If you're good with your fingers and your head, you can do it.",
+        "ImagesAlice/fil_de_soie.png");
     }
 
     /**

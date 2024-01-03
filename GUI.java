@@ -1,220 +1,268 @@
 import javax.swing.*;
 import java.awt.*;
-import java.util.ArrayList;
-import java.util.List;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.net.URL;
+import java.util.List;
+
 public class GUI {
     private AliceInWonderlandGame game;
-    private Character character;
     private Room currentRoomG;
     private JTextArea dialogueTextArea;
-    private Alice alice; 
-    private Item item ;
     private JProgressBar hungerProgressBar;
-    public GUI() {
-        JFrame frame = new JFrame("Nested Layout Example");
+    private JFrame frame;
+    private JPanel mainPanel;
+    private JPanel centerLeftPanel;
+    private JPanel centerRightPanel;
+
+    // Fonts
+    private static final Font FONT_BIG = new Font("Arial", Font.BOLD, 40);
+    private static final Font FONT_MEDIUM = new Font("Arial", Font.BOLD, 28);
+
+    public GUI(AliceInWonderlandGame game) {
+        this.game = game;
+        initializeGUI();
+    }
+
+    private void initializeGUI() {
+        currentRoomG = game.getCurrentRoom();
+        frame = new JFrame("Alice in Wonderland Game");
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Main content panel with BorderLayout
-        JPanel mainPanel = new JPanel(new BorderLayout());
-        
-        // Center panel with Grid
-        JPanel centerPanel = new JPanel(new GridLayout (1,3));
-        JPanel centerLeftPanel = new JPanel(new GridLayout (2,1));
-        JPanel centerRightPanel = new JPanel(new BorderLayout());
+        mainPanel = new JPanel(new BorderLayout());
+        JPanel centerPanel = createCenterPanel();
+        JPanel southPanel = createSouthPanel();
 
-        JTextArea descriptionArea = new JTextArea();
-        descriptionArea.setText("test");// a remplacer par afficheDescriptionSalle()
-        descriptionArea.setEditable(false);
-        centerLeftPanel.add(descriptionArea);
-        
-        centerPanel.add(centerLeftPanel);
-        
-
-        
-        // Créer une instance de JLabel avec une ImageIcon
-        
-        ImageIcon imageIcon = new ImageIcon("/ImagesAlice/Alice.png"); 
-        JLabel imageLabel = new JLabel(imageIcon);
-        centerPanel.add(new JLabel(imageIcon));
-                
-        
-        
-        // Create inventory label
-        //JLabel inventoryLabel = afficheInventaire();
-        //centerRightPanel.add(inventoryLabel, BorderLayout.NORTH);
-
-        // Create hunger progress bar
-        JProgressBar hungerProgressBar = new JProgressBar(0, 100);
-        hungerProgressBar.setStringPainted(true); // Show percentage text
-        centerRightPanel.add(hungerProgressBar, BorderLayout.SOUTH);
-
-        centerPanel.add(centerRightPanel);
-        
-                
         mainPanel.add(centerPanel, BorderLayout.CENTER);
-        // South panel
-        JPanel southPanel = new JPanel(new FlowLayout());
-        JPanel southWestPanel = new JPanel(new GridLayout (3,3));
-        
-        JButton emptyButton1 = new JButton();
-        JButton emptyButton2 = new JButton();
-        JButton emptyButton3 = new JButton();
-        JButton emptyButton4 = new JButton();
-        JButton emptyButton5 = new JButton();
-        
-        JButton moveLeftButton = new JButton("Left");
-        JButton moveUpButton = new JButton("Up");
-        JButton moveDownButton = new JButton("Down");
-        JButton moveRightButton = new JButton("Right");
-
-        // Create movement buttons
-        southWestPanel.add(emptyButton1);
-        southWestPanel.add(moveUpButton);
-        southWestPanel.add(emptyButton2);
-        southWestPanel.add(moveLeftButton);
-        southWestPanel.add(emptyButton3);
-        southWestPanel.add(moveDownButton);
-        southWestPanel.add(emptyButton4);
-        southWestPanel.add(moveRightButton);
-        southWestPanel.add(emptyButton5);
-        southPanel.add(southWestPanel);
-        // Add ActionListener to the movement buttons
-        moveLeftButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleMove("West");
-            }
-        });
-
-        moveUpButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleMove("North");
-            }
-        });
-
-        moveDownButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleMove("South");
-            }
-        });
-
-        moveRightButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                handleMove("East");
-            }
-        });
-        
-        // Create actions buttons
-        JButton actionButton = new JButton("Action");
-        actionButton.addActionListener(new ActionListener()
-        {
-           @Override
-           public void actionPerformed(ActionEvent e){
-               action();
-           }
-        });
-        
-        JButton parlerButton = new JButton("Parler");
-        parlerButton.addActionListener(new ActionListener() 
-        {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                parler(); 
-            }
-        });
-        southPanel.add(actionButton);
-        southPanel.add(parlerButton);
-        
-        JPanel southeastPanel = new JPanel(new BorderLayout());
-        dialogueTextArea = new JTextArea();
-        dialogueTextArea.setEditable(false);  // Make it non-editable
-        southeastPanel.add(new JScrollPane(dialogueTextArea), BorderLayout.CENTER);
         mainPanel.add(southPanel, BorderLayout.SOUTH);
 
         frame.getContentPane().add(mainPanel);
-        frame.setSize(600, 600);
-        frame.setLocationRelativeTo(null);
+        frame.setExtendedState(JFrame.MAXIMIZED_BOTH);
         frame.setVisible(true);
     }
-    
-    public void parler() {
-        // Check if the current room has a character
-        if (currentRoomG != null && currentRoomG.getCharacter() != null) {
-            // Display the character's dialogue
-            String dialogue = currentRoomG.getCharacter().dialogue();
-            appendDialogue(dialogue);
-        } else {
-            // Display a generic message if there is no character in the room
-            appendDialogue("There is no one to parler with in this room.");
+
+    private JPanel createCenterPanel() {
+        JPanel centerPanel = new JPanel(new GridLayout(1, 3));
+        centerLeftPanel = createCenterLeftPanel();
+        centerPanel.add(centerLeftPanel);
+        centerPanel.add(createCenterImagePanel());
+        centerRightPanel = createCenterRightPanel();
+        centerPanel.add(centerRightPanel);
+        return centerPanel;
+    }
+
+    private JPanel createCenterLeftPanel() {
+        JPanel panel = new JPanel(new GridLayout(2, 1));
+        panel.setPreferredSize(new Dimension(200, 150));
+
+        JLabel nameLabel = createFormattedLabel(game.getCurrentRoom().getName(), FONT_BIG);
+        JLabel descriptionLabel = createFormattedLabel(game.getCurrentRoom().getDescription(), FONT_MEDIUM);
+
+        panel.add(nameLabel);
+        panel.add(descriptionLabel);
+
+        return panel;
+    }
+
+    private JLabel createFormattedLabel(String text, Font font) {
+        JLabel label = new JLabel("<html>" + text + "</html>");
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setFont(font);
+        return label;
+    }
+
+    private JPanel createCenterImagePanel() {
+        ImageIcon imageIcon = new ImageIcon(game.getCurrentRoom().getPath());
+        JLabel imageLabel = new JLabel(imageIcon);
+        JPanel imagePanel = new JPanel(new BorderLayout());
+        imagePanel.add(imageLabel, BorderLayout.CENTER);
+        return imagePanel;
+    }
+
+    private JPanel createCenterRightPanel() {
+        JPanel panel = new JPanel(new BorderLayout());
+        ImageIcon imageAlice = new ImageIcon(game.getAlice().getPath());
+        JLabel imageLabelAlice = new JLabel(imageAlice);
+        panel.add(imageLabelAlice, BorderLayout.NORTH);
+
+        JLabel inventoryLabel = createInventoryLabel();
+        panel.add(inventoryLabel, BorderLayout.CENTER);
+
+        hungerProgressBar = new JProgressBar(0, 100);
+        hungerProgressBar.setStringPainted(true);
+        panel.add(hungerProgressBar, BorderLayout.SOUTH);
+
+        return panel;
+    }
+
+    private JLabel createInventoryLabel() {
+        JLabel inventoryLabel = new JLabel("Inventory: ");
+        inventoryLabel.setLayout(new FlowLayout());
+        for (Item item : game.getAlice().getInventory()) {
+            String iconPath = item.getIconPath();
+            ImageIcon itemIcon = new ImageIcon(iconPath);
+            JLabel itemLabel = new JLabel(itemIcon);
+            inventoryLabel.add(itemLabel);
+        }
+        return inventoryLabel;
+    }
+
+    private JPanel createSouthPanel() {
+        JPanel southPanel = new JPanel(new FlowLayout());
+        JPanel southWestPanel = createSouthWestPanel();
+        dialogueTextArea = new JTextArea(5, 40);
+        dialogueTextArea.setEditable(false);  // Make it non-editable
+
+        southPanel.add(southWestPanel);
+        southPanel.add(new JScrollPane(dialogueTextArea));  // Add the dialogueTextArea in a JScrollPane
+
+        return southPanel;
+    }
+
+    private JPanel createSouthWestPanel() {
+        JPanel southWestPanel = new JPanel(new GridLayout(3, 3));
+
+        JButton actionButton = new JButton("Action");
+        JButton parlerButton = new JButton("Parler");
+        JButton exitButton = new JButton("Exits");
+
+        JButton moveLeftButton = new JButton("West");
+        JButton moveUpButton = new JButton("North");
+        JButton moveDownButton = new JButton("South");
+        JButton moveRightButton = new JButton("East");
+
+        JButton emptyButton4 = new JButton();
+        JButton emptyButton5 = new JButton();
+
+        southWestPanel.add(actionButton);
+        southWestPanel.add(moveUpButton);
+        southWestPanel.add(parlerButton);
+        southWestPanel.add(moveLeftButton);
+        southWestPanel.add(exitButton);
+        southWestPanel.add(moveRightButton);
+        southWestPanel.add(emptyButton4);
+        southWestPanel.add(moveDownButton);
+        southWestPanel.add(emptyButton5);
+
+        addActionListeners(moveLeftButton, moveUpButton, moveDownButton, moveRightButton, actionButton, parlerButton, exitButton);
+
+        return southWestPanel;
+    }
+
+    private void addActionListeners(JButton... buttons) {
+        for (JButton button : buttons) {
+            button.addActionListener(new ActionListener() {
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    handleButtonClick(button.getText());
+                }
+            });
         }
     }
-        // Method to append dialogue to the TextArea
+
+    private void handleButtonClick(String buttonLabel) {
+        switch (buttonLabel) {
+            case "West":
+            case "North":
+            case "South":
+            case "East":
+                game.handleMove(buttonLabel);
+                updateAll();
+                break;
+            case "Action":
+                action();
+                break;
+            case "Parler":
+                parler();
+                break;
+            case "Exits":
+                sortie();
+                break;
+            default:
+                // Handle other button actions if needed
+                break;
+        }
+    }
+
+    private void action() {
+        // Implement action logic
+    }
+
+    public void parler() {
+        // Check if the current room has characters
+        List<Character> characters = currentRoomG.getCharacter();
+
+        if (characters.isEmpty()) {
+            appendDialogue("There is no one to speak with in this room.");
+        } else {
+            // take the first character in the list
+            Character characterToParler = characters.get(0);
+
+            // Get the character's dialogue
+            String dialogue = characterToParler.dialogue();
+
+            // Display the dialogue in the dialogueTextArea
+            appendDialogue(dialogue);
+        }
+    }
+
+    private void sortie() {
+        Room currentRoom = game.getCurrentRoom();
+
+        // Retrieve the exits of the current room
+        List<String> exits = currentRoom.getAllExits();
+
+        // Check if there are exits
+        if (!exits.isEmpty()) {
+            // Display the exits in the dialogue area
+            String exitsMessage = "You can go : " + String.join(", ", exits);
+            appendDialogue(exitsMessage);
+        } else {
+            // If no exits, display a message
+            appendDialogue("There are no exits in this room.");
+        }
+    }
+
     private void appendDialogue(String dialogue) {
         dialogueTextArea.append(dialogue + "\n");
     }
-    // Method to handle movement based on the button clicked
-    private void handleMove(String direction) {
-        alice.move(direction);
+
+    public void updateAll(){
         updateHungerProgressBar();
-    }
-    
-    private void updateHungerProgressBar() {
-        int hunger = alice.getHunger();
-        hungerProgressBar.setValue(hunger);
-        hungerProgressBar.setString("Hunger: " + hunger + "%");
-    }
-    
-    public String afficheDescriptionSalle() {
-    Room currentRoomG = game.getCurrentRoom();
-    return currentRoomG.getDescription();
-    }
-    
-    public JLabel afficheInventaire() {
-        List<Item> inventory = alice.getInventory();
-        // Create a label to hold the inventory icons
-        JLabel inventoryLabel = new JLabel();
-
-        // Set the layout to a horizontal flow layout
-        inventoryLabel.setLayout(new FlowLayout());
-
-        for (Item item : inventory) {
-            // Get the icon path for the current item
-            String iconPath = item.getIconPath();
-
-            // Create an ImageIcon using the icon path
-            ImageIcon itemIcon = new ImageIcon(iconPath);
-
-            // Create a label with the item's icon
-            JLabel itemLabel = new JLabel(itemIcon);
-
-            // Add the label to the inventory label
-            inventoryLabel.add(itemLabel);
-        }
-
-        return inventoryLabel;
-    }
-    
-    public void action(){
+        updateInventoryLabel();
+        updateCurrentRoomInfo();
+        updateDialogueTextArea("oui oui");
         
     }
     
-    public String imageRoom(){
-        Room currentRoomG = game.getCurrentRoom();
-        return(currentRoomG.getLienImage());
+    public void updateInventoryLabel() {
+        // Update the inventory label in the GUI
+        JLabel inventoryLabel = createInventoryLabel();
+        centerRightPanel.removeAll();
+        centerRightPanel.add(inventoryLabel, BorderLayout.CENTER);
+        frame.revalidate();
+        frame.repaint();
+    }
+    
+    public void updateHungerProgressBar() {
+        // Update the hunger progress bar in the GUI
+        int hungerValue = game.getAlice().getHunger();
+        hungerProgressBar.setValue(hungerValue);
+        hungerProgressBar.setString("Hunger: " + hungerValue + "%");
     }
 
-    
-    public static void main() {
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                new GUI();
-            }
-        });
+    public void updateDialogueTextArea(String message) {
+        // Update the dialogue text area in the GUI
+        appendDialogue(message);
+    }
+
+    public void updateCurrentRoomInfo() {
+        // Update the current room information in the GUI
+        JLabel nameLabel = createFormattedLabel(game.getCurrentRoom().getName(), FONT_BIG);
+        JLabel descriptionLabel = createFormattedLabel(game.getCurrentRoom().getDescription(), FONT_MEDIUM);
+        centerLeftPanel.removeAll();
+        centerLeftPanel.add(nameLabel);
+        centerLeftPanel.add(descriptionLabel);
+        frame.revalidate();
+        frame.repaint();
     }
 }

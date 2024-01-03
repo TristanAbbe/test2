@@ -1,106 +1,109 @@
 import java.util.HashMap;
-import java.util.Set;
-/**
- * Class Room - a room in an adventure game.
- * This class is part of a text-based adventure game.
- *
- * A "Room" represents one location in the game. It is connected to
- * other rooms via exits. The exits are labeled by cardinal points
- * such as north, east, south, west.
- * 
- * @author MAZURIE Jules
- * @version 29/11/2023
- */
+import java.util.*;
+
 public class Room {
     private String name;
     private String description;
     private HashMap<String, Room> exits;
-    //private int x;
-    //private int y;
-    private Character character;
-    private int status; // statu 0 (=>pas le dialogue car le joueur n'a pas fais certaines chose), 
-    //1 (=>dialogue se fait) 2(=> Alice a terminer sur cette map). Gére quel dialogue on a déclencher.
+    private int status;
     private Item item;
     private String lienImage;
-    
-    public Room(String description,String name) 
-    {
-        setName(name);
+    private List<Character> charactersList = new ArrayList<>();
+    private List<Item> itemList = new ArrayList<>();
+    private List<Alice> aliceList = new ArrayList<>();
+    public Room(String description, String name, String pathImage) {
         setDescription(description);
+        setName(name);
         exits = new HashMap<>();
-        //this.lienImage = lienImage; ajout du lien de l'image
+        setLienImage(pathImage);
     }
 
-    /**
-     * Define an exit from this room.
-     * @param direction The exit's direction.
-     * @param neighbor The neighboring room.
-     */
     public void setExit(String direction, Room neighbor) {
         exits.put(direction, neighbor);
     }
-    
-    public void setName(String name){
+
+    public void setName(String name) {
         if (name != null && !name.trim().isEmpty()) {
-            this.name = name.trim(); // Trim leading and trailing whitespaces
+            this.name = name.trim();
         } else {
             throw new IllegalArgumentException("Name cannot be null or empty.");
         }
     }
-    
-    public void setDescription(String description){
+
+    public void setDescription(String description) {
         if (description != null && !description.trim().isEmpty()) {
-            this.description = description.trim(); // Trim leading and trailing whitespaces
+            this.description = description.trim();
         } else {
             throw new IllegalArgumentException("Description cannot be null or empty.");
         }
     }
 
-    /**
-     * Get the name of the room.
-     * @return The name of the room.
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * Get the description of the room.
-     * @return The description of the room.
-     */
     public String getDescription() {
         return description;
     }
-    
-    // public Room changeRom(String direction){
-        
-    // }
-    
-    public void setCharacter(Character character) {
-        this.character = character;
-    }
 
-    public Character getCharacter() {
-        return character;
-    }
-    
-    public String getLienImage(){
+    public String getPath() {
         return lienImage;
     }
+
+    public void setLienImage(String pathImage) {
+        if (pathImage != null && !pathImage.trim().isEmpty()) {
+            this.lienImage = pathImage.trim();
+        } else {
+            throw new IllegalArgumentException("Path image cannot be null or empty.");
+        }
+    }
     
-    /**
-     * Get the neighboring room in the given direction.
-     * @param direction The exit's direction.
-     * @return The neighboring room.
-     */
+    public List<Character> getCharacter(){
+        return charactersList;
+    }
+    
+    public void ajouterPersonnage(Character personnage){
+        charactersList.add(personnage);
+    }
+    
+    public void removePersonnage(Character personnage){
+        charactersList.remove(personnage);
+    }
+    
+     public List<Alice> getAlice(){
+        return aliceList;
+    }
+    
+    public void ajouterAlice(Alice personnage){
+        aliceList.add(personnage);
+    }
+    
+    public void removeAlice(Alice personnage){
+        aliceList.remove(personnage);
+    }
+    
+    public List<Item> getItemList() {
+        return itemList;
+    }
+
+    // Méthode pour ajouter un objet à la liste
+    public void addItem(Item item) {
+        itemList.add(item);
+    }
+
+    // Méthode pour retirer un objet de la liste
+    public void removeItem(Item item) {
+        itemList.remove(item);
+    }
+    
     public Room getExit(String direction) {
         return exits.get(direction);
     }
-
-    /**
-     * Get a string representation of the exits.
-     * @return A string representing the exits.
-     */
+    
+    public List<String> getAllExits() {
+        return new ArrayList<>(exits.keySet());
+    }
+    
     public String getExitString() {
         StringBuilder exitString = new StringBuilder("Exits: ");
         for (String direction : exits.keySet()) {

@@ -16,6 +16,8 @@ public class Taco extends Item
     public Taco()
     {
         // initialisation des variables d'instance
-        super("Taco","A speciality from moustache country, it looks very filling.");
+        super("Taco",
+        "A speciality from moustache country, it looks very filling.",
+        "ImagesAlice/tacos-signatures-big87.png");
     }
 }

@@ -5,15 +5,14 @@
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Humid_hut extends Room
-{
+public class HumidHut extends Room
+{   
     /**
      * Constructeur d'objets de classe Humid_hut
      */
-    public Humid_hut()
+    public HumidHut()
     {
         // initialisation des variables d'instance
-        super ("A small, scary and dark dirthole","Humid Hut");
-        //ImagesAlice/Humid_hut.png
+        super ("A small, scary and dark dirthole","Humid Hut","ImagesAlice/Humid_hut.png");
     }
 }

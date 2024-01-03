@@ -5,7 +5,7 @@
  * @author (votre nom)
  * @version (un numéro de version ou une date)
  */
-public class Menace_palace extends Room
+public class MenacePalace extends Room
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private int x;
@@ -13,23 +13,11 @@ public class Menace_palace extends Room
     /**
      * Constructeur d'objets de classe Menace_palace
      */
-    public Menace_palace()
+    public MenacePalace()
     {
         // initialisation des variables d'instance
         super("This is the entrance to a huge, menacing house of cards! The design of this castle must have been very laborious.", 
-        "Menace Palace");
-        //ImagesAlice/menace_palace.png
+        "Menace Palace","ImagesAlice/menace_palace.png");
     }
 
-    /**
-     * Un exemple de méthode - remplacez ce commentaire par le vôtre
-     *
-     * @param  y   le paramètre de la méthode
-     * @return     la somme de x et de y
-     */
-    public int sampleMethod(int y)
-    {
-        // Insérez votre code ici
-        return x + y;
-    }
 }

@@ -9,6 +9,7 @@ public class Absolem extends Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
     private boolean headache;
+    private SilkThread silkthread;
     /**
      * Constructeur d'objets de classe Absolem
      */
@@ -17,26 +18,8 @@ public class Absolem extends Character
         // initialisation des variables d'instance
         super("Absolem","Hi, I'm Absolem");
         headache=true;
-    }
-
-    @Override
-    public void receiveItem(Item item)
-    {
-    if (item.getName() == "Doubiprane")
-        {
-            setItemQuest(true);
-            headache = false;
-    }
-    }
-    
-    @Override
-    public void giveItem(Character receiver, Item item) {
-        if (getItemQuest()==true) {
-            Item givenItem = item;
-            givenItem.setName("Silk Thread");
-            receiver.setName("Alice");
-            receiver.receiveItem(givenItem);
-        }
+        silkthread = new SilkThread();
+        addItem(silkthread);
     }
 
     /**

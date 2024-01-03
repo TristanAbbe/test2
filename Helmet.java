@@ -16,7 +16,9 @@ public class Helmet extends Item
     public Helmet()
     {
         // initialisation des variables d'instance
-        super("Helmet","This magnificent headgear adorned with a menacing spike could well come in handy.  They seem to be the same ones used by the body cards.");
+        super("Helmet",
+        "This magnificent headgear adorned with a menacing spike could well come in handy.  They seem to be the same ones used by the body cards.",
+        "ImagesAlice/casque.png");
     }
 
     /**

@@ -16,7 +16,9 @@ public class Grasnolax extends Item
     public Grasnolax()
     {
         // initialisation des variables d'instance
-        super("Grasnolax","A large cookie made from a delicious mixture of oilseeds (almonds, hazelnuts, walnuts, cashew nuts) and possibly oats and honey, which give it its fattening powers. However, it is very high in calories: no more than one at a time.");
+        super("Grasnolax",
+        "A large cookie made from a delicious mixture of oilseeds (almonds, hazelnuts, walnuts, cashew nuts) and possibly oats and honey, which give it its fattening powers. However, it is very high in calories: no more than one at a time.",
+        "ImagesAlice/Granolax.png");
     }
 
     /**

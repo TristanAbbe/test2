@@ -1,4 +1,4 @@
-import javax.swing.JOptionPane;
+import java.util.*;
 /**
  * Décrivez votre classe Character ici.
  *
@@ -9,10 +9,11 @@ import javax.swing.JOptionPane;
 public class Character
 {
     // variables d'instance - remplacez l'exemple qui suit par le vôtre
-    private String name;
-    private String description;
-    private int state;
-    private boolean itemQuest;
+    private  String name;
+    private  String description;
+    private  int state;
+    private  boolean itemQuest;
+    private  List<Item> itemList = new ArrayList<>();
     
     /**
      * Constructeur d'objets de classe Character
@@ -37,14 +38,20 @@ public class Character
         }
     }
     
-    public boolean getItemQuest(){
-        return itemQuest;
+    public  List<Item> getItemList() {
+        return itemList;
+    }
+
+    // Méthode pour ajouter un objet à la liste
+    public  void addItem(Item item) {
+        itemList.add(item);
     }
     
     public void setItemQuest(boolean ItemQuest)
     {
         this.itemQuest=itemQuest;
     }
+
     
     public String getDescription() {
         return description;
@@ -64,16 +71,6 @@ public class Character
 
     public void setState(int state) {
         this.state = state;
-    }
-    
-    public void receiveItem (Item item)
-    {
-        
-    }
-    
-    public void giveItem(Character receiver, Item item)
-    {
-        
     }
     
     // Méthode pour un dialogue

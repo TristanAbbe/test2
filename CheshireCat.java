@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
  */
 public class CheshireCat extends Character
 {
-    // variables d'instance - remplacez l'exemple qui suit par le vôtre
+    
     /**
      * Constructeur d'objets de classe CheshireCat
      */
@@ -15,12 +15,6 @@ public class CheshireCat extends Character
     {
         // initialisation des variables d'instance
         super("Cheshire Cat", "I am the Cheshire Cat : welcome in the game");
-    }
-
-    @Override
-    public void receiveItem(Item item)
-    {
-        
     }
     
     // Override the dialogue method for the CheshireCat
