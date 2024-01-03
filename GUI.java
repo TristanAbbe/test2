@@ -36,7 +36,7 @@ public class GUI {
         
         // Créer une instance de JLabel avec une ImageIcon
         
-        ImageIcon imageIcon = new ImageIcon("Images_Alice/Beaver_river.jpg"); 
+        ImageIcon imageIcon = new ImageIcon("/ImagesAlice/Alice.png"); 
         JLabel imageLabel = new JLabel(imageIcon);
         centerPanel.add(new JLabel(imageIcon));
                 
@@ -53,9 +53,7 @@ public class GUI {
 
         centerPanel.add(centerRightPanel);
         
-        
-        
-        
+                
         mainPanel.add(centerPanel, BorderLayout.CENTER);
         // South panel
         JPanel southPanel = new JPanel(new FlowLayout());
