@@ -17,6 +17,7 @@ public class Lowland_woodland extends Room
     {
         // initialisation des variables d'instance
         super("Plains as far as the eye can see. I don't want to get lost...","Lowland Woodland");
+        //ImagesAlice/LowlandWoodland.png
     }
 
     /**

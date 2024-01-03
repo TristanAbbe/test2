@@ -18,6 +18,7 @@ public class Menace_palace extends Room
         // initialisation des variables d'instance
         super("This is the entrance to a huge, menacing house of cards! The design of this castle must have been very laborious.", 
         "Menace Palace");
+        //ImagesAlice/menace_palace.png
     }
 
     /**

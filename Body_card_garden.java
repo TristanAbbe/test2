@@ -19,6 +19,7 @@ public class Body_card_garden extends Room
         super("A large door adorned with precious stones stands at the end of this immense room. There seem to be cards with"
         +" arms and legs with little pointy helmets standing in front of the door. It looks like they're keeping it. Better to be discreet with them, they look dangerous.", 
         "Body-Card Garden");
+        //ImagesAlice/Body_card_garden.png
     }
 
     /**

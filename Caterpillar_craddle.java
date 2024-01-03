@@ -20,6 +20,7 @@ public class Caterpillar_craddle extends Room
         +" of sand. On both sides of the room there are fossilized skins resembling molts of butterflies, normally they should not be this big for such"
         +" a small animal. Very light silk threads starting from the ceiling cross the room with in its center a large red mushroom with white spots on"
         +" which is placed a strange character of an unempathetic nature.", "Caterpillar Craddle");
+        //ImagesAlice/Caterpillar.png
     }
     
     public void ajouterPersonnage()

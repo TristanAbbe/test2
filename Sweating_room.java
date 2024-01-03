@@ -19,6 +19,7 @@ public class Sweating_room extends Room
         super("An entrance hall with sofas, armchairs and a well-stocked fridge. There even are beds. People must come here to"
         +" relax. On the other hand, the atmosphere is really heavy and hot there with all this fog but it seems to be a very particular kind of smoke, very good-smelling.", 
         "Sweating Room");
+        //ImagesAlice/Sweating_room.png
     }
 
     /**
